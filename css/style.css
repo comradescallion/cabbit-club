@@ -1,0 +1,59 @@
+@font-face {
+    font-family: Krait;
+    src: url(/fonts/krait.solid-regular.otf);
+}
+
+@font-face {
+    font-family: Krait-Hollow;
+    src: url(/fonts/krait.hollow-regular.otf);
+}
+
+@font-face {
+    font-family: Vipnagorgialla;
+    src: url(/fonts/vipnagorgialla.regular.otf);
+}
+
+@font-face {
+    font-family: Toxigenesis;
+    src: url(/fonts/toxigenesis.rg-bold.otf);
+}
+
+body {
+    background-color: lightpink;
+}
+
+.vinebox {
+    margin: 16px;
+    width: max-content;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.vineborder.horizontal {
+    height: 32px;
+    width: 100%;
+    background-image: url('/vines-side.gif');
+    background-repeat: repeat-x;
+    background-size: 32px;
+}
+
+.middle-row {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.vineborder.vertical {
+    width: 32px;
+    height: 100%;
+    background-image: url('/vines.gif');
+    background-repeat: repeat-y;
+    background-size: 32px;
+}
+
+.contents {
+    flex: 1;
+    padding: 10px;
+    overflow: auto;
+}
