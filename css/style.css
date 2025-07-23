@@ -65,9 +65,11 @@ body {
 
 .contents {
     flex: 1;
+    flex-direction: column;
     padding: 10px;
     overflow: auto;
     outline-style: dashed;
     outline-width: 2px;
     outline-color: rgb(150, 0, 80);
+    display: flex;
 }
