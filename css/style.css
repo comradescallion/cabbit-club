@@ -55,8 +55,7 @@ body {
 }
 
 .vineborder {
-    background-color:#ffb6c1;
-    z-index: -1;
+    z-index: 1;
 }
 
 .vineborder.horizontal {
@@ -94,4 +93,5 @@ body {
     outline-width: 2px;
     outline-color: rgb(150, 0, 80);
     display: flex;
+    box-shadow: 0 0 15px 45px #ffb6c1;
 }
