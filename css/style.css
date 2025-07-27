@@ -35,8 +35,9 @@
 }
 
 body {
-    background-color: lightpink;
+    background-color: #ffb6c1;
     padding: 1rem;
+    background-image: url("/meowl.png");
 }
 
 .wrapper {
@@ -54,6 +55,8 @@ body {
 }
 
 .vineborder {
+    background-color:#ffb6c1;
+    z-index: -1;
 }
 
 .vineborder.horizontal {

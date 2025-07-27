@@ -10,24 +10,65 @@
 <body>
     <div class="wrapper">
         <div class="vinebox">
-            <div class="vineborder horizontal"></div>
+            <div class="vineborder horizontal" style="box-shadow: 0 0 15px 10px #ffb6c1;"></div>
 
             <div class="middle-row">
-            <div class="vineborder vertical"></div>
+            <div class="vineborder vertical" style="box-shadow: -10px 10px 15px #ffb6c1;"></div>
 
             <div class="contents" style="background-color: antiquewhite;">
                 <div style="display: flex; flex: 1; flex-direction:row;">
-                    <a href="fourthofjuly.3gp"><img src="cabbit.gif" alt="cabbit" style="flex: 0.5"></a>
-                    <img src="heart.gif" alt="love" width="140px">
+                    <a href="fourthofjuly.3gp" style="display: flex;  max-height: 140px; min-width: 140px;"><img src="cabbit.gif" alt="cabbit" style=""></a>
+                    <img id="heart" src="heart.gif" alt="love" style="max-width: 50%; min-width: 0; max-height: 140px;" onclick="heartSound()">
                 </div>
                 <p style="font-family: Gista Danes; font-size: 50px; margin: 0px;">welcome to cabbit club</p>
             </div>
 
-            <div class="vineborder vertical"></div>
+            <div class="vineborder vertical" style="box-shadow: 10px 10px 15px #ffb6c1;"></div>
             </div>
 
-            <div class="vineborder horizontal"></div>
+            <div class="vineborder horizontal" style="box-shadow: -10px 10px 15px #ffb6c1, 10px 10px 15px #ffb6c1;"></div>
         </div>
     </div>
+
+<script>
+    let splote = false
+
+    const heart = document.getElementById("heart");
+    let lastWidth = heart.offsetWidth;
+
+    const observer = new ResizeObserver(entries => {
+        for (let entry of entries) {
+            const newWidth = entry.contentRect.width;
+            const widthChange = lastWidth - newWidth;
+
+            if (widthChange >= 7) {
+                if (newWidth <= 5) {
+                    heart.src = "/splat.png"
+                    splote = true
+                }
+            }
+
+            lastWidth = newWidth;
+        }
+    });
+
+    observer.observe(heart);
+
+
+    const splat = new Audio('/splat.mp3');
+    splat.volume = 0.5
+
+    const shine = new Audio('/shine.mp3');
+    splat.volume = 0.5
+
+    function heartSound() {
+        if (splote) {
+            splat.play();
+        }
+        else {
+            shine.play();
+        }
+    }
+</script>
 </body>
 </html>
