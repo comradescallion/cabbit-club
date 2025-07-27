@@ -38,18 +38,19 @@ body {
     background-color: #ffb6c1;
     padding: 1rem;
     background-image: url("/meowl.png");
+    height: 100%;
 }
 
 .wrapper {
     width: 100%;
-    max-width: 400px;
+    margin: 0;
 }
 
 .vinebox {
     width: 100%;
-    height: 295px;
+    min-height: 295px;
     min-width: 216px;
-    max-height: max-content;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
 }
@@ -69,22 +70,21 @@ body {
 }
 
 .middle-row {
-    flex: 0.8;
     display: flex;
     flex-direction: row;
+    align-items: stretch;
 }
 
 .vineborder.vertical {
     width: 32px;
     min-width: 32px;
-    height: 100%;
-    flex: 0.1;
     background-image: url('/vines.gif');
     background-repeat: repeat-y;
     background-size: 32px;
 }
 
 .contents {
+    background-color: antiquewhite;
     flex: 1;
     flex-direction: column;
     padding: 10px;
@@ -94,4 +94,8 @@ body {
     outline-color: rgb(150, 0, 80);
     display: flex;
     box-shadow: 0 0 15px 45px #ffb6c1;
+}
+
+#heart:hover {
+    cursor: pointer; 
 }
