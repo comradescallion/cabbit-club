@@ -9,24 +9,31 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="vinebox">
-            <div class="vineborder horizontal"></div>
+        <div style="display: flex; flex-direction: row; flex-wrap: wrap; max-width: 840px;">
+            <div class="vinebox" style="margin-right: 32px;">
+                <div class="vineborder horizontal"></div>
 
-            <div class="middle-row">
-                <div class="vineborder vertical"></div>
+                <div class="middle-row">
+                    <div class="vineborder vertical"></div>
 
-                <div class="contents">
-                    <div style="display: flex; flex: 1; flex-direction:row; justify-content:space-around;">
-                        <a href="fourthofjuly.3gp" style="display: flex;  max-height: 140px; min-width: 140px;"><img src="cabbit.gif" alt="cabbit" style=""></a>
-                        <img id="heart" src="heart.gif" alt="love" style="max-width: 50%; min-width: 0; max-height: 140px;" onclick="heartSound()">
+                    <div class="contents">
+                        <div style="display: flex; flex: 1; flex-direction:row; justify-content:space-around;">
+                            <a href="fourthofjuly.3gp" style="display: flex;  max-height: 140px; min-width: 140px;"><img src="cabbit.gif" alt="cabbit" style=""></a>
+                            <img id="heart" src="heart.gif" alt="love" style="max-width: 50%; min-width: 0; max-height: 140px;" onclick="heartSound()">
+                        </div>
+                        <p style="font-family: Gista Danes; font-size: 50px; margin: 0px;">welcome to cabbit club</p>
                     </div>
-                    <p style="font-family: Gista Danes; font-size: 50px; margin: 0px;">welcome to cabbit club</p>
+
+                    <div class="vineborder vertical"></div>
                 </div>
 
-                <div class="vineborder vertical"></div>
+                <div class="vineborder horizontal"></div>
             </div>
 
-            <div class="vineborder horizontal"></div>
+            <div class="contents" style="box-shadow: none; margin: 16px; margin-right: 0; margin-left: 0; min-width: 168px; min-height: 200px;">
+                <a href="/greeting/"><img src="fancycabbit.gif" alt="cabbit" style="max-width: 100%;"></a>
+                <a href="/greeting/"><img src="greeting.gif" alt="greeting cards" style="max-width: 100%;"></a>
+            </div>
         </div>
 
         <div class="contents" style="margin-top: 32px; box-shadow: none; max-width: 600px; min-width: 196px;">
@@ -50,7 +57,7 @@
         </div>
     </div>
 
-    <a href="underwater/"><div class="underwater"></div></a>
+    <a href="underwater/"><div id="underwater"></div></a>
 <script>
     let splote = false
 

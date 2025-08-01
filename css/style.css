@@ -108,7 +108,7 @@ a:hover {
     cursor: url("/cursors/Strawby-Link.cur"), pointer;
 }
 
-.underwater {
+#underwater {
     margin-top: 100px;
     min-height: 108px;
     width: 100%;
