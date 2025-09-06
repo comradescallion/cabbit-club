@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- welcome to cabbit.club. -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/style.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/cabbiticon.png">
     <title>cabbit.club</title>
+    <!-- TODO: add message of the day -->
 </head>
+
+
+
+
 <body>
+
     <div class="wrapper">
+
         <div style="display: flex; flex-direction: row; flex-wrap: wrap; max-width: 840px;">
+
+            <!-- top area-->
             <div class="vinebox" style="margin-right: 32px;">
                 <div class="vineborder horizontal"></div>
-
                 <div class="middle-row">
                     <div class="vineborder vertical"></div>
 
@@ -26,16 +36,18 @@
 
                     <div class="vineborder vertical"></div>
                 </div>
-
                 <div class="vineborder horizontal"></div>
             </div>
-
+            <!-- greeting cards-->
             <div class="contents" style="box-shadow: none; margin: 16px; margin-right: 0; margin-left: 0; min-width: 168px; min-height: 200px;">
                 <a href="/greeting/"><img src="fancycabbit.gif" alt="cabbit" style="max-width: 100%;"></a>
                 <a href="/greeting/"><img src="greeting.gif" alt="greeting cards" style="max-width: 100%;"></a>
             </div>
+
         </div>
 
+
+        <!-- Cabbit search-->
         <div class="contents" style="margin-top: 32px; box-shadow: none; max-width: 600px; min-width: 196px;">
             <div style="display: flex; flex-direction:row; flex-wrap: wrap; justify-content: space-around;">
                 <a href="search/" style="max-width: 264px;"><img src="search.gif"></a>
@@ -49,15 +61,22 @@
             </div>
         </div>
 
+        <!-- credits-->
         <div class="contents" style="margin-top: 64px; box-shadow: none; max-width: 380px; min-width: 196px;">
             <p>
                 Credits: <br>
-                Strawberry cursors created by <a href="https://toumeya.itch.io/" target="_blank">toumeya</a>!
+                Strawberry cursors by <a href="https://toumeya.itch.io/" target="_blank">toumeya</a>
             </p>
+
+
         </div>
+
     </div>
 
+    <!--bottom waves, underwater portal-->
     <a href="underwater/"><div id="underwater"></div></a>
+
+<!-- hearto an explosion! script -->
 <script>
     let splote = false
 
@@ -75,7 +94,6 @@
                     splote = true
                 }
             }
-
             lastWidth = newWidth;
         }
     });
@@ -98,5 +116,7 @@
         }
     }
 </script>
+
+
 </body>
 </html>
