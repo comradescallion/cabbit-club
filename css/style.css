@@ -36,7 +36,7 @@
 
 body {
     background-color: #ffb6c1;
-    background-image: url("/meowl.png");
+    background-image: url("/assets/images/meowl.png");
     height: 100%;
     padding: 0;
     margin: 0;
@@ -72,7 +72,7 @@ a:hover {
     min-height: 32px;
     flex: 1;
     width: 100%;
-    background-image: url('/vines-side.gif');
+    background-image: url('/assets/gifs/vines-side.gif');
     background-repeat: repeat-x;
     background-size: 32px;
 }
@@ -86,7 +86,7 @@ a:hover {
 .vineborder.vertical {
     width: 32px;
     min-width: 32px;
-    background-image: url('/vines.gif');
+    background-image: url('/assets/gifs/vines.gif');
     background-repeat: repeat-y;
     background-size: 32px;
 }
@@ -114,5 +114,5 @@ a:hover {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    background-image: url(/waves.gif);
+    background-image: url(/assets/gifs/waves.gif);
 }

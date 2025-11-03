@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/rocktobot/css/style.css" rel="stylesheet">
+    <title>rocktobot</title>
+</head>
+<body>
+    <header class="site-header">
+        <h1>rocktobot</h1>
+        <nav>
+            <a href="/rocktobot/">Home</a>
+            <a href="/rocktobot/#portfolio">Portfolio</a>
+            <a href="/rocktobot/posts/">Blog</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Welcome</h2>
+            <p>This is the future home of my blog and portfolio.</p>
+        </section>
+
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <ul class="card-grid">
+                <li class="card">
+                    <h3>Project One</h3>
+                    <p>Short description of a cool project.</p>
+                </li>
+                <li class="card">
+                    <h3>Project Two</h3>
+                    <p>Another highlight worth showcasing.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Latest Posts</h2>
+            <ul>
+                <li><a href="/rocktobot/posts/hello-world.html">Hello, world</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="year"></span> rocktobot</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
+

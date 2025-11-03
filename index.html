@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/style.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/cabbiticon.png">
+    <link rel="icon" type="image/x-icon" href="/assets/images/cabbiticon.png">
     <title>cabbit.club</title>
     <!-- TODO: add message of the day -->
 </head>
@@ -28,8 +28,8 @@
 
                     <div class="contents">
                         <div style="display: flex; flex: 1; flex-direction:row; justify-content:space-around;">
-                            <a href="fourthofjuly.3gp" style="display: flex;  max-height: 140px; min-width: 140px;"><img src="cabbit.gif" alt="cabbit" style=""></a>
-                            <img id="heart" src="heart.gif" alt="love" style="max-width: 50%; min-width: 0; max-height: 140px;" onclick="heartSound()">
+                            <a href="fourthofjuly.3gp" style="display: flex;  max-height: 140px; min-width: 140px;"><img src="/assets/gifs/cabbit.gif" alt="cabbit" style=""></a>
+                            <img id="heart" src="/assets/gifs/heart.gif" alt="love" style="max-width: 50%; min-width: 0; max-height: 140px;" onclick="heartSound()">
                         </div>
                         <p style="font-family: Gista Danes; font-size: 50px; margin: 0px;">welcome to cabbit club</p>
                     </div>
@@ -40,8 +40,8 @@
             </div>
             <!-- greeting cards-->
             <div class="contents" style="box-shadow: none; margin: 16px; margin-right: 0; margin-left: 0; min-width: 168px; min-height: 200px;">
-                <a href="/greeting/"><img src="fancycabbit.gif" alt="cabbit" style="max-width: 100%;"></a>
-                <a href="/greeting/"><img src="greeting.gif" alt="greeting cards" style="max-width: 100%;"></a>
+                <a href="/greeting/"><img src="/assets/gifs/fancycabbit.gif" alt="cabbit" style="max-width: 100%;"></a>
+                <a href="/greeting/"><img src="/assets/gifs/greeting.gif" alt="greeting cards" style="max-width: 100%;"></a>
             </div>
 
         </div>
@@ -50,9 +50,9 @@
         <!-- Cabbit search-->
         <div class="contents" style="margin-top: 32px; box-shadow: none; max-width: 600px; min-width: 196px;">
             <div style="display: flex; flex-direction:row; flex-wrap: wrap; justify-content: space-around;">
-                <a href="search/" style="max-width: 264px;"><img src="search.gif"></a>
+                <a href="search/" style="max-width: 264px;"><img src="/assets/gifs/search.gif"></a>
                 <div style="display: flex; flex-direction: column; max-width:264px; margin-left: 15px;">
-                    <a href="search/"><img src="cabbit-search.gif" style="min-width: 0px; max-width: 200px; max-height:28px;"></a>
+                    <a href="search/"><img src="/assets/gifs/cabbit-search.gif" style="min-width: 0px; max-width: 200px; max-height:28px;"></a>
                     <p>there r many many mini many mysteriouses in th world..<br>
                         cabbit will tell you what you need. to KNOW!!<br>
                         numver one best source on information e<i>special</i>y about CABBIT!!!!!<br>
@@ -90,7 +90,7 @@
 
             if (widthChange >= 7) {
                 if (newWidth <= 5) {
-                    heart.src = "/splat.png"
+                    heart.src = "/assets/images/splat.png"
                     splote = true
                 }
             }
@@ -101,10 +101,10 @@
     heartObserver.observe(heart);
 
 
-    const splat = new Audio('/splat.mp3');
+    const splat = new Audio('/assets/audio/splat.mp3');
     splat.volume = 0.5
 
-    const shine = new Audio('/shine.mp3');
+    const shine = new Audio('/assets/audio/shine.mp3');
     splat.volume = 0.5
 
     function heartSound() {

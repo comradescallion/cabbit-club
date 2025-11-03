@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/rocktobot/css/style.css" rel="stylesheet">
+    <title>Hello, world</title>
+</head>
+<body>
+    <header class="site-header">
+        <h1><a href="/rocktobot/" style="text-decoration:none;color:inherit;">rocktobot</a></h1>
+        <nav>
+            <a href="/rocktobot/">Home</a>
+            <a href="/rocktobot/#portfolio">Portfolio</a>
+            <a href="/rocktobot/posts/">Blog</a>
+        </nav>
+    </header>
+    <main class="container">
+        <article class="card">
+            <h1>Hello, world</h1>
+            <p class="muted">Posted on <time datetime="2025-11-03">November 3, 2025</time></p>
+            <p>First post! Replace this with your writing, images, and links.</p>
+        </article>
+    </main>
+    <footer class="site-footer">
+        <p>© <span id="year"></span> rocktobot</p>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
+
