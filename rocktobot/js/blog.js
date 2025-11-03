@@ -13,8 +13,9 @@ let postMetadata = typeof window !== 'undefined' ? window.postMetadata || {} : {
 // Fetch posts from Tumblr
 async function fetchTumblrPosts(limit = 20, offset = 0) {
     try {
+        // Use filter=html to preserve HTML formatting, or omit filter (html is default)
         const response = await fetch(
-            `${TUMBLR_API_BASE}?api_key=${TUMBLR_API_KEY}&limit=${limit}&offset=${offset}&filter=text`
+            `${TUMBLR_API_BASE}?api_key=${TUMBLR_API_KEY}&limit=${limit}&offset=${offset}`
         );
         const data = await response.json();
         

@@ -2,6 +2,13 @@
 
 let currentPostId = null;
 
+// Utility function to escape HTML in text content
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
 // Helper functions (make available globally)
 function getPostTitle(post) {
     const metadata = (typeof window !== 'undefined' && window.postMetadata) || postMetadata || {};
@@ -81,15 +88,16 @@ async function loadAndRenderPost() {
     // Update page title
     document.title = `${title} — rocktobot`;
     
+    // Use innerHTML but ensure content (which is HTML) is inserted directly
     container.innerHTML = `
         <div class="post-back">
             <a href="/rocktobot/posts/" class="back-button">← Back to Posts</a>
         </div>
         <article class="post-article">
             <header class="post-header">
-                <h1>${title}</h1>
+                <h1>${escapeHtml(title)}</h1>
                 <p class="post-meta">
-                    <time datetime="${new Date(post.timestamp * 1000).toISOString()}">${date}</time>
+                    <time datetime="${new Date(post.timestamp * 1000).toISOString()}">${escapeHtml(date)}</time>
                 </p>
                 ${tags.length > 0 ? `<div class="post-tags">${tagsHtml}</div>` : ''}
             </header>
