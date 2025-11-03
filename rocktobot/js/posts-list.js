@@ -27,24 +27,29 @@ async function initPostList() {
 }
 
 // Make helper functions available globally
+// These should match the functions in blog.js
 function getPostTitle(post) {
-    const metadata = (typeof window !== 'undefined' && window.postMetadata) || postMetadata || {};
+    const metadata = (typeof window !== 'undefined' && window.postMetadata) || (typeof postMetadata !== 'undefined' ? postMetadata : {});
     if (metadata[post.id_string] && metadata[post.id_string].title) {
         return metadata[post.id_string].title;
     }
-    // Check if Tumblr post has a title
-    if (post.title) {
+    // Check if Tumblr post has a title (and it's not empty)
+    if (post.title && post.title.trim() !== '') {
         return post.title;
     }
     return formatDate(post.timestamp);
 }
 
 function getPostTags(post) {
-    const metadata = (typeof window !== 'undefined' && window.postMetadata) || postMetadata || {};
+    const metadata = (typeof window !== 'undefined' && window.postMetadata) || (typeof postMetadata !== 'undefined' ? postMetadata : {});
     if (metadata[post.id_string] && metadata[post.id_string].tags && Array.isArray(metadata[post.id_string].tags)) {
         return metadata[post.id_string].tags;
     }
-    return (post.tags || []).map(tag => tag.startsWith('#') ? tag : `#${tag}`);
+    // Return Tumblr tags, ensuring # prefix
+    return (post.tags || []).map(tag => {
+        const tagStr = String(tag);
+        return tagStr.startsWith('#') ? tagStr : `#${tagStr}`;
+    });
 }
 
 // Load posts (from Tumblr or cache)
