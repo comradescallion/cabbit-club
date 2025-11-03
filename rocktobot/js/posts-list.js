@@ -170,8 +170,10 @@ function renderPostList() {
             <li class="post-card">
                 <a href="${postUrl}" class="post-link">
                     <h3>${title}</h3>
-                    <p class="post-date">${date}</p>
-                    ${tags.length > 0 ? `<div class="post-tags">${tagsHtml}</div>` : ''}
+                    <div class="post-meta-row">
+                        <p class="post-date">${date}</p>
+                        ${tags.length > 0 ? `<div class="post-tags">${tagsHtml}</div>` : ''}
+                    </div>
                 </a>
             </li>
         `;

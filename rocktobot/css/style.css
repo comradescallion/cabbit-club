@@ -108,34 +108,47 @@ a:hover { opacity: 0.9; }
     color: var(--accent);
 }
 
+.post-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
 .post-date {
-    margin: 0 0 12px 0;
+    margin: 0;
     font-size: 14px;
     color: var(--muted);
 }
 
 .post-tags {
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 12px;
+    gap: 6px;
+    align-items: center;
+    margin: 0;
+    line-height: 1.4;
 }
 
 .tag {
     display: inline-block;
-    padding: 4px 10px;
-    background: rgba(255, 110, 199, 0.1);
-    border: 1px solid rgba(255, 110, 199, 0.3);
-    border-radius: 6px;
-    font-size: 13px;
+    padding: 2px 8px;
+    background: rgba(255, 110, 199, 0.08);
+    border: 1px solid rgba(255, 110, 199, 0.2);
+    border-radius: 4px;
+    font-size: 11px;
     text-decoration: none;
     color: var(--accent);
     transition: background 0.2s, border-color 0.2s;
+    opacity: 0.8;
+    vertical-align: middle;
 }
 
 .tag:hover {
-    background: rgba(255, 110, 199, 0.2);
-    border-color: var(--accent);
+    background: rgba(255, 110, 199, 0.15);
+    border-color: rgba(255, 110, 199, 0.4);
+    opacity: 1;
 }
 
 /* Sort and Filter Controls */
