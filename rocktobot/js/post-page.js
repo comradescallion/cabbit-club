@@ -8,6 +8,10 @@ function getPostTitle(post) {
     if (metadata[post.id_string] && metadata[post.id_string].title) {
         return metadata[post.id_string].title;
     }
+    // Check if Tumblr post has a title
+    if (post.title) {
+        return post.title;
+    }
     return formatDate(post.timestamp);
 }
 
@@ -78,6 +82,9 @@ async function loadAndRenderPost() {
     document.title = `${title} — rocktobot`;
     
     container.innerHTML = `
+        <div class="post-back">
+            <a href="/rocktobot/posts/" class="back-button">← Back to Posts</a>
+        </div>
         <article class="post-article">
             <header class="post-header">
                 <h1>${title}</h1>

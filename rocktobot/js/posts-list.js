@@ -32,6 +32,10 @@ function getPostTitle(post) {
     if (metadata[post.id_string] && metadata[post.id_string].title) {
         return metadata[post.id_string].title;
     }
+    // Check if Tumblr post has a title
+    if (post.title) {
+        return post.title;
+    }
     return formatDate(post.timestamp);
 }
 

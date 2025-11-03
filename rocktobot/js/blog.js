@@ -19,8 +19,11 @@ async function fetchTumblrPosts(limit = 20, offset = 0) {
         const data = await response.json();
         
         if (data.meta.status === 200 && data.response) {
-            // Filter out reblogs
-            const posts = data.response.posts.filter(post => !post.reblogged_from_name);
+            // Filter out reblogs - check multiple indicators
+            const posts = data.response.posts.filter(post => {
+                // A post is a reblog if it has reblog information
+                return !post.reblogged_from_name && !post.reblogged_root_name && !post.reblogged_from_id;
+            });
             return posts;
         }
         return [];
@@ -40,11 +43,15 @@ function formatDate(timestamp) {
     });
 }
 
-// Get post title (custom or default to date)
+// Get post title (custom metadata, Tumblr title, or default to date)
 function getPostTitle(post) {
     const metadata = postMetadata[post.id_string];
     if (metadata && metadata.title) {
         return metadata.title;
+    }
+    // Check if Tumblr post has a title
+    if (post.title) {
+        return post.title;
     }
     return formatDate(post.timestamp);
 }
@@ -63,17 +70,27 @@ function parseTumblrContent(post) {
     let content = '';
     
     if (post.type === 'text') {
+        // Text posts: body contains HTML with formatting
         content = post.body || '';
-    } else if (post.type === 'photo') {
-        // Handle photo posts
-        if (post.caption) {
-            content += post.caption;
-        }
+        
+        // If text post has embedded photos, add them
         if (post.photos && post.photos.length > 0) {
             post.photos.forEach(photo => {
                 const imgUrl = photo.original_size.url;
                 content += `<img src="${imgUrl}" alt="Post image" class="post-image" />`;
             });
+        }
+    } else if (post.type === 'photo') {
+        // Handle photo posts
+        if (post.photos && post.photos.length > 0) {
+            post.photos.forEach(photo => {
+                const imgUrl = photo.original_size.url;
+                content += `<img src="${imgUrl}" alt="Post image" class="post-image" />`;
+            });
+        }
+        // Caption for photo posts is HTML
+        if (post.caption) {
+            content += post.caption;
         }
     } else if (post.type === 'quote') {
         content = `<blockquote>${post.text}</blockquote>`;
@@ -82,12 +99,29 @@ function parseTumblrContent(post) {
         }
     } else if (post.type === 'link') {
         content = `<p><a href="${post.url}" target="_blank">${post.title || post.url}</a></p>`;
+        // Description is HTML
         if (post.description) {
             content += post.description;
         }
     } else if (post.type === 'video') {
+        // Video posts can have embedded player or video_url
         if (post.video_url) {
             content += `<video controls><source src="${post.video_url}" type="video/mp4"></video>`;
+        } else if (post.player) {
+            // Use the player embed code
+            const player = post.player.find(p => p.width === 500) || post.player[0];
+            if (player) {
+                content += player.embed_code;
+            }
+        }
+        // Caption is HTML
+        if (post.caption) {
+            content += post.caption;
+        }
+    } else if (post.type === 'audio') {
+        // Audio posts
+        if (post.player) {
+            content += post.player;
         }
         if (post.caption) {
             content += post.caption;

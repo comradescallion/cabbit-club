@@ -221,6 +221,28 @@ a:hover { opacity: 0.9; }
 }
 
 /* Post Page Styles */
+.post-back {
+    margin-bottom: 20px;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--card);
+    border: 1px solid #232333;
+    border-radius: 8px;
+    color: var(--fg);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.back-button:hover {
+    background: #232333;
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
 .post-article {
     background: var(--card);
     border: 1px solid #232333;
@@ -256,6 +278,54 @@ a:hover { opacity: 0.9; }
     margin: 16px 0;
     color: var(--fg);
 }
+
+.post-body a {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.post-body a:hover {
+    opacity: 0.8;
+}
+
+.post-body strong,
+.post-body b {
+    font-weight: 600;
+}
+
+.post-body em,
+.post-body i {
+    font-style: italic;
+}
+
+.post-body ul,
+.post-body ol {
+    margin: 16px 0;
+    padding-left: 24px;
+    color: var(--fg);
+}
+
+.post-body li {
+    margin: 8px 0;
+}
+
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+    margin: 24px 0 12px 0;
+    color: var(--fg);
+    font-weight: 600;
+}
+
+.post-body h1 { font-size: 24px; }
+.post-body h2 { font-size: 22px; }
+.post-body h3 { font-size: 20px; }
+.post-body h4 { font-size: 18px; }
+.post-body h5 { font-size: 16px; }
+.post-body h6 { font-size: 14px; }
 
 .post-body img {
     max-width: 100%;
