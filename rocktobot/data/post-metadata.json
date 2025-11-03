@@ -1,0 +1,8 @@
+{
+  "_comment": "Custom post metadata. Add entries in format: 'tumblr-post-id': { 'title': 'Custom Title', 'tags': ['#tag1', '#tag2'] }",
+  "example-post-id": {
+    "title": "Example Custom Title",
+    "tags": ["#ai", "#theology"]
+  }
+}
+
