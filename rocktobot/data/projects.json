@@ -1,0 +1,65 @@
+{
+  "_comment": "Portfolio projects data. Add projects here with all required fields.",
+  "projects": [
+    {
+      "id": "example-project-1",
+      "title": "Example Project One",
+      "bannerImage": "/rocktobot/assets/projects/example-1/banner.jpg",
+      "timeFrame": "2024 - Present",
+      "description": "A detailed description of the project and your personal involvement. This can include multiple paragraphs and explain what you did, why it matters, and what you learned.",
+      "involvement": "My role included [specific contributions]. I worked on [technologies/areas]. This project taught me [lessons learned].",
+      "links": [
+        {
+          "label": "Live Demo",
+          "url": "https://example.com",
+          "type": "external"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/example",
+          "type": "external"
+        }
+      ],
+      "gallery": [
+        {
+          "image": "/rocktobot/assets/projects/example-1/image1.jpg",
+          "caption": "Screenshot showing the main interface"
+        },
+        {
+          "image": "/rocktobot/assets/projects/example-1/image2.jpg",
+          "caption": "Detail view of the feature"
+        }
+      ],
+      "has3D": false,
+      "viewer3D": null
+    },
+    {
+      "id": "example-project-2",
+      "title": "Example Project Two",
+      "bannerImage": "/rocktobot/assets/projects/example-2/banner.jpg",
+      "timeFrame": "2023 - 2024",
+      "description": "Another example project with detailed description.",
+      "involvement": "I was responsible for [specific work].",
+      "links": [
+        {
+          "label": "Documentation",
+          "url": "https://docs.example.com",
+          "type": "external"
+        }
+      ],
+      "gallery": [
+        {
+          "image": "/rocktobot/assets/projects/example-2/image1.jpg",
+          "caption": "Project overview"
+        }
+      ],
+      "has3D": true,
+      "viewer3D": {
+        "type": "model-viewer",
+        "model": "/rocktobot/assets/projects/example-2/model.glb",
+        "format": "glb"
+      }
+    }
+  ]
+}
+

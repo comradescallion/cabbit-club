@@ -4,54 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/rocktobot/css/style.css" rel="stylesheet">
-    <title>rocktobot</title>
+    <title>Project — rocktobot</title>
 </head>
 <body>
     <header class="site-header">
-        <h1>ROCKTOBOT</h1>
+        <h1><a href="/rocktobot/" style="text-decoration:none;color:inherit;">rocktobot</a></h1>
         <nav>
             <a href="/rocktobot/">Home</a>
             <a href="/rocktobot/#portfolio">Portfolio</a>
             <a href="/rocktobot/posts/">Blog</a>
         </nav>
     </header>
-
     <main class="container">
-        <section>
-            <h2>Welcome</h2>
-            <p>This is the future home of my blog and portfolio.</p>
-        </section>
-
-        <section id="portfolio">
-            <h2>Portfolio</h2>
-            <ul id="portfolio-grid" class="portfolio-grid">
-                <!-- Projects will be loaded here via JavaScript -->
-            </ul>
-        </section>
-
-        <section>
-            <h2>Latest Posts</h2>
-            <ul>
-                <li><a href="/rocktobot/posts/hello-world.html">Hello, world</a></li>
-            </ul>
-        </section>
+        <div id="project-content">
+            <!-- Project content will be loaded here via JavaScript -->
+            <p>Loading project...</p>
+        </div>
     </main>
-
     <footer class="site-footer">
         <p>© <span id="year"></span> rocktobot</p>
     </footer>
-
     <script src="/rocktobot/js/portfolio.js"></script>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
-        // Initialize portfolio
+        // Initialize project page
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initPortfolio);
+            document.addEventListener('DOMContentLoaded', initProjectPage);
         } else {
-            initPortfolio();
+            initProjectPage();
         }
     </script>
 </body>
 </html>
-
 
