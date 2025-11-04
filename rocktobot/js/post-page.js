@@ -15,13 +15,14 @@ function getPostTitle(post) {
     // Check custom metadata first (for manual overrides)
     const metadata = (typeof window !== 'undefined' && window.postMetadata) || (typeof postMetadata !== 'undefined' ? postMetadata : {});
     if (metadata[post.id_string] && metadata[post.id_string].title) {
-        return metadata[post.id_string].title;
+        return String(metadata[post.id_string].title); // Preserve case
     }
     
     // Check Tumblr post title - this is the primary source
     // Check both 'title' field and 'slug' field (some posts might use slug)
     const tumblrTitle = post.title || post.slug;
     if (tumblrTitle && String(tumblrTitle).trim() !== '') {
+        // Only trim whitespace, preserve original case
         return String(tumblrTitle).trim();
     }
     
@@ -150,16 +151,25 @@ function setupEmailForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
     
+    // Get the post title from the header
+    const postTitleElement = document.querySelector('.post-header h1');
+    const postTitle = postTitleElement ? postTitleElement.textContent : 'Blog Post';
+    
+    // Set the default subject value
+    const subjectInput = document.getElementById('contact-subject');
+    if (subjectInput && !subjectInput.value) {
+        subjectInput.value = `Re: ${postTitle}`;
+    }
+    
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        const subject = document.getElementById('contact-subject').value;
+        const subject = document.getElementById('contact-subject').value || `Re: ${postTitle}`;
         const message = document.getElementById('contact-message').value;
-        const postTitle = document.querySelector('.post-header h1')?.textContent || 'Blog Post';
         
         // Create mailto link
         const email = 'kaistone@example.com'; // Replace with actual email
-        const mailtoSubject = encodeURIComponent(subject || `Re: ${postTitle}`);
+        const mailtoSubject = encodeURIComponent(subject);
         const mailtoBody = encodeURIComponent(
             `Regarding: ${postTitle}\n\n${message}`
         );

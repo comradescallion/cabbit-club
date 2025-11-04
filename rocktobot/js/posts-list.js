@@ -40,13 +40,14 @@ function getPostTitle(post) {
     // Check custom metadata first (for manual overrides)
     const metadata = (typeof window !== 'undefined' && window.postMetadata) || (typeof postMetadata !== 'undefined' ? postMetadata : {});
     if (metadata[post.id_string] && metadata[post.id_string].title) {
-        return metadata[post.id_string].title;
+        return String(metadata[post.id_string].title); // Preserve case
     }
     
     // Check Tumblr post title - this is the primary source
     // Check both 'title' field and 'slug' field (some posts might use slug)
     const tumblrTitle = post.title || post.slug;
     if (tumblrTitle && String(tumblrTitle).trim() !== '') {
+        // Only trim whitespace, preserve original case
         return String(tumblrTitle).trim();
     }
     

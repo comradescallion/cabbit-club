@@ -70,18 +70,20 @@ function formatDate(timestamp) {
 /**
  * Get post title - priority: custom metadata > Tumblr title > date
  * Only defaults to date if Tumblr post has no title
+ * Preserves original case and formatting
  */
 function getPostTitle(post) {
     // Check custom metadata first (for manual overrides)
     const metadata = postMetadata[post.id_string];
     if (metadata && metadata.title) {
-        return metadata.title;
+        return String(metadata.title); // Preserve case
     }
     
     // Check Tumblr post title - this is the primary source
     // Check both 'title' field and 'slug' field (some posts might use slug)
     const tumblrTitle = post.title || post.slug;
     if (tumblrTitle && String(tumblrTitle).trim() !== '') {
+        // Only trim whitespace, preserve original case
         return String(tumblrTitle).trim();
     }
     
@@ -204,17 +206,44 @@ function processTumblrHTML(html) {
 }
 
 /**
+ * Remove duplicate title from post body if it exists
+ * Prevents title from appearing twice (once in header, once in body)
+ */
+function removeDuplicateTitle(content, postTitle) {
+    if (!content || !postTitle) return content;
+    
+    // Create temporary container to parse HTML
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = content;
+    
+    // Check if first element is a heading (h1-h6) that matches the title
+    const firstElement = tempDiv.firstElementChild;
+    if (firstElement && /^h[1-6]$/i.test(firstElement.tagName)) {
+        const headingText = firstElement.textContent.trim();
+        // If heading matches title (case-insensitive), remove it
+        if (headingText.toLowerCase() === postTitle.toLowerCase()) {
+            firstElement.remove();
+        }
+    }
+    
+    return tempDiv.innerHTML;
+}
+
+/**
  * Parse Tumblr post content based on post type
  * Handles: text, photo, quote, link, video, audio, chat
  */
 function parseTumblrContent(post) {
     let content = '';
+    const postTitle = getPostTitle(post);
     
     switch (post.type) {
         case 'text':
             // Text posts: body contains HTML with all formatting
             if (post.body) {
                 content = processTumblrHTML(post.body);
+                // Remove duplicate title if it appears in the body
+                content = removeDuplicateTitle(content, postTitle);
             }
             
             // Add photos if they exist separately (not embedded in body)
