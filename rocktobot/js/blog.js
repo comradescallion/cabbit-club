@@ -69,20 +69,23 @@ function formatDate(timestamp) {
 
 /**
  * Get post title - priority: custom metadata > Tumblr title > date
+ * Only defaults to date if Tumblr post has no title
  */
 function getPostTitle(post) {
-    // Check custom metadata first
+    // Check custom metadata first (for manual overrides)
     const metadata = postMetadata[post.id_string];
     if (metadata && metadata.title) {
         return metadata.title;
     }
     
-    // Check Tumblr post title
-    if (post.title && post.title.trim() !== '') {
-        return post.title;
+    // Check Tumblr post title - this is the primary source
+    // Check both 'title' field and 'slug' field (some posts might use slug)
+    const tumblrTitle = post.title || post.slug;
+    if (tumblrTitle && String(tumblrTitle).trim() !== '') {
+        return String(tumblrTitle).trim();
     }
     
-    // Default to formatted date
+    // Only default to date if Tumblr post has no title
     return formatDate(post.timestamp);
 }
 

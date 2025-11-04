@@ -12,14 +12,20 @@ function escapeHtml(text) {
 // Helper functions (make available globally)
 // These should match the functions in blog.js
 function getPostTitle(post) {
+    // Check custom metadata first (for manual overrides)
     const metadata = (typeof window !== 'undefined' && window.postMetadata) || (typeof postMetadata !== 'undefined' ? postMetadata : {});
     if (metadata[post.id_string] && metadata[post.id_string].title) {
         return metadata[post.id_string].title;
     }
-    // Check if Tumblr post has a title (and it's not empty)
-    if (post.title && post.title.trim() !== '') {
-        return post.title;
+    
+    // Check Tumblr post title - this is the primary source
+    // Check both 'title' field and 'slug' field (some posts might use slug)
+    const tumblrTitle = post.title || post.slug;
+    if (tumblrTitle && String(tumblrTitle).trim() !== '') {
+        return String(tumblrTitle).trim();
     }
+    
+    // Only default to date if Tumblr post has no title
     return formatDate(post.timestamp);
 }
 

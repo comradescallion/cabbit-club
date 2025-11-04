@@ -5,6 +5,14 @@ let allPosts = [];
 let currentSort = 'date-desc';
 let currentTagFilter = null;
 
+// Utility function to escape HTML in text content
+function escapeHtml(text) {
+    if (!text) return '';
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
 // Initialize post list
 async function initPostList() {
     // Load posts (either from Tumblr API or local storage)
@@ -29,14 +37,20 @@ async function initPostList() {
 // Make helper functions available globally
 // These should match the functions in blog.js
 function getPostTitle(post) {
+    // Check custom metadata first (for manual overrides)
     const metadata = (typeof window !== 'undefined' && window.postMetadata) || (typeof postMetadata !== 'undefined' ? postMetadata : {});
     if (metadata[post.id_string] && metadata[post.id_string].title) {
         return metadata[post.id_string].title;
     }
-    // Check if Tumblr post has a title (and it's not empty)
-    if (post.title && post.title.trim() !== '') {
-        return post.title;
+    
+    // Check Tumblr post title - this is the primary source
+    // Check both 'title' field and 'slug' field (some posts might use slug)
+    const tumblrTitle = post.title || post.slug;
+    if (tumblrTitle && String(tumblrTitle).trim() !== '') {
+        return String(tumblrTitle).trim();
     }
+    
+    // Only default to date if Tumblr post has no title
     return formatDate(post.timestamp);
 }
 
@@ -171,10 +185,13 @@ function renderPostList() {
         // Use dynamic post page with ID parameter
         const postUrl = `/rocktobot/posts/post.html?id=${post.id_string}`;
         
+        // Escape HTML in title for safety
+        const escapedTitle = escapeHtml(title);
+        
         return `
             <li class="post-card">
                 <a href="${postUrl}" class="post-link">
-                    <h3>${title}</h3>
+                    <h3>${escapedTitle}</h3>
                     <div class="post-meta-row">
                         <p class="post-date">${date}</p>
                         ${tags.length > 0 ? `<div class="post-tags">${tagsHtml}</div>` : ''}
