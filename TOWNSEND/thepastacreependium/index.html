@@ -4,8 +4,346 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Pasta Creependium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'creepy-black': '#0a0a0a',
+                        'creepy-dark': '#1a1a1a',
+                        'creepy-red': '#8a0000',
+                        'creepy-text': '#cccccc',
+                        'link-red': '#ff3333'
+                    },
+                    fontFamily: {
+                        'serif': ['Georgia', 'Times New Roman', 'serif'],
+                        'sans': ['Verdana', 'Arial', 'sans-serif'],
+                        'mono': ['Courier New', 'monospace']
+                    },
+                    backgroundImage: {
+                        'noise': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.05%22/%3E%3C/svg%3E')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #ccc;
+        }
+        /* Classic Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #550000;
+            border: 1px solid #000;
+        }
+        /* Link Hover Effects */
+        a:hover {
+            text-decoration: underline;
+        }
+        .story-content {
+            line-height: 1.6;
+        }
+        .crt-overlay {
+            pointer-events: none;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+            opacity: 0.15;
+        }
+    </style>
 </head>
-<body>
-    <a href="townsend.html">any time now</a>...
+<body class="font-sans min-h-screen bg-creepy-black bg-noise relative">
+    <!-- Subtle CRT effect overlay -->
+    <div class="crt-overlay"></div>
+
+    <!-- Top Bar -->
+    <div class="bg-creepy-dark border-b border-creepy-red/30 py-1 text-xs text-center text-gray-500 font-mono">
+        EST. 2008 | STATUS: ONLINE | USERS: 666
+    </div>
+
+    <!-- Main Container -->
+    <div class="container mx-auto max-w-5xl px-4 py-6">
+        
+        <!-- Header / Banner -->
+        <header class="mb-8 border-b-4 border-creepy-red pb-6">
+            <h1 class="text-4xl md:text-6xl font-serif text-creepy-red font-bold tracking-tighter text-shadow-md mb-2">
+                THE PASTA <span class="text-white">CREEPENDIUM</span>
+            </h1>
+            <p class="text-lg text-gray-400 font-serif italic">
+                Welcome to The Pasta Creependium, your destination for everything spooky!
+            </p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="bg-creepy-dark border border-gray-800 mb-8 shadow-lg">
+            <ul class="flex flex-wrap text-sm md:text-base divide-x divide-gray-700">
+                <li class="flex-1 text-center hover:bg-creepy-red hover:text-white transition-colors cursor-pointer group">
+                    <a href="#" class="block py-3 px-4 uppercase font-bold tracking-widest group-hover:no-underline">Stories</a>
+                </li>
+                <li class="flex-1 text-center hover:bg-creepy-red hover:text-white transition-colors cursor-pointer group">
+                    <a href="#" class="block py-3 px-4 uppercase font-bold tracking-widest group-hover:no-underline">Discussion</a>
+                </li>
+                <li class="flex-1 text-center hover:bg-creepy-red hover:text-white transition-colors cursor-pointer group">
+                    <a href="#" class="block py-3 px-4 uppercase font-bold tracking-widest group-hover:no-underline">Characters</a>
+                </li>
+                <li class="flex-1 text-center hover:bg-creepy-red hover:text-white transition-colors cursor-pointer group">
+                    <a href="#" class="block py-3 px-4 uppercase font-bold tracking-widest group-hover:no-underline">Submit</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Two Column Layout -->
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- Left Column: Main Content -->
+            <main class="w-full lg:w-2/3 space-y-8">
+                
+                <!-- Entry 1: The Peeker -->
+                <article class="bg-creepy-dark border border-gray-800 p-6 shadow-md hover:border-gray-700 transition-colors">
+                    <h2 class="text-2xl font-serif text-link-red font-bold mb-2">
+                        <a href="https://youtu.be/1xhhql_gpDY" target="_blank" class="hover:text-red-400 no-underline hover:underline">THE PEEKER</a>
+                    </h2>
+                    <div class="text-xs text-gray-500 mb-4 font-mono uppercase border-b border-gray-800 pb-2">
+                        Posted on <span class="blur-[2px] select-none">▒▒▒ ▒▒, ▒▒▒▒</span> by <span class="text-gray-400">spiritpops</span> | <i class="fas fa-comments"></i> 13 Comments
+                    </div>
+                    <div class="story-content text-gray-300 font-serif text-lg mb-4">
+                        <p>... Should you be woken up by a strange, soft orange glow from your peripheral vision, you may become the first to understand just why the peeker is peeking, and the watcher is watching. ...</p>
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://youtu.be/1xhhql_gpDY" target="_blank" class="text-sm text-gray-500 hover:text-gray-300">Read Full Story &raquo;</a>
+                    </div>
+                </article>
+
+                <!-- Entry 2: Panic at the Disco -->
+                <article class="bg-creepy-dark border border-gray-800 p-6 shadow-md hover:border-gray-700 transition-colors">
+                    <h2 class="text-2xl font-serif text-link-red font-bold mb-2">
+                        <a href="#" class="hover:text-red-400 no-underline hover:underline">PANIC AT THE DISCO - THE LOST CABIN TAPES</a>
+                    </h2>
+                    <div class="text-xs text-gray-500 mb-4 font-mono uppercase border-b border-gray-800 pb-2">
+                        Posted on <span class="blur-[2px] select-none">▒▒▒ ▒▒, ▒▒▒▒</span> by <span class="text-gray-400">xXPHANGIRLXx</span> | <i class="fas fa-comments"></i> 4 Comments
+                    </div>
+                    <div class="story-content text-gray-300 font-serif text-lg mb-4">
+                        <p>... y would u do this, brendon urie cried out, in pain crawling towards the corner. ryan ross didnt stop, blood still gushing from his crimson eye sockets. "i never had a choice" he sputtered, lunging at the singer, his normally messy hair now standing up like a lion ready to pounce. ...</p>
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="#" class="text-sm text-gray-500 hover:text-gray-300">Read Full Story &raquo;</a>
+                    </div>
+                </article>
+
+                <!-- Entry 3: Animal Jam -->
+                <article class="bg-creepy-dark border border-gray-800 p-6 shadow-md hover:border-gray-700 transition-colors">
+                    <h2 class="text-2xl font-serif text-link-red font-bold mb-2">
+                        <a href="https://web.archive.org/web/20150317022702/https://forgotten-midgar.deviantart.com/art/The-Goat-Myth-Animal-Jam-458887102" target="_blank" class="hover:text-red-400 no-underline hover:underline">ANIMAL JAM - THE GOAT MYTH</a>
+                    </h2>
+                    <div class="text-xs text-gray-500 mb-4 font-mono uppercase border-b border-gray-800 pb-2">
+                        Posted on <span class="blur-[2px] select-none">▒▒▒ ▒▒, ▒▒▒▒</span> by <span class="text-gray-400">Forgotten-Midgar</span> | <i class="fas fa-comments"></i> 22 Comments
+                    </div>
+                    <div class="story-content text-gray-300 font-serif text-lg mb-4">
+                        <p>... There is a myth in Jamaa that is undisclosed and suppressed. This myth is known as the goat myth and is said to only be accessible in the “Make A New Animal” option. ...</p>
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://web.archive.org/web/20150317022702/https://forgotten-midgar.deviantart.com/art/The-Goat-Myth-Animal-Jam-458887102" target="_blank" class="text-sm text-gray-500 hover:text-gray-300">Read Full Story &raquo;</a>
+                    </div>
+                </article>
+
+                <!-- Entry 4: Townsend -->
+                <article class="bg-creepy-dark border border-gray-800 p-6 shadow-md hover:border-gray-700 transition-colors">
+                    <h2 class="text-2xl font-serif text-link-red font-bold mb-2">
+                        <a href="townsend.html" class="hover:text-red-400 no-underline hover:underline">TOWNSEND</a>
+                    </h2>
+                    <div class="text-xs text-gray-500 mb-4 font-mono uppercase border-b border-gray-800 pb-2">
+                        Posted on <span class="blur-[2px] select-none">▒▒▒ ▒▒, ▒▒▒▒</span> by <span class="text-gray-400">Giles_the_X</span> | <i class="fas fa-comments"></i> 284 Comments
+                    </div>
+                    <div class="story-content text-gray-300 font-serif text-lg mb-4">
+                        <p>Learn about TOWNSEND.</p>
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="townsend.html" class="text-sm text-gray-500 hover:text-gray-300">Read Full Story &raquo;</a>
+                    </div>
+                </article>
+
+                 <!-- Entry 5: MARIO.JPG -->
+                 <article class="bg-creepy-dark border border-gray-800 p-6 shadow-md hover:border-gray-700 transition-colors">
+                    <h2 class="text-2xl font-serif text-link-red font-bold mb-2">
+                        <a href="#" class="hover:text-red-400 no-underline hover:underline">MARIO.JPG</a>
+                    </h2>
+                    <div class="text-xs text-gray-500 mb-4 font-mono uppercase border-b border-gray-800 pb-2">
+                        Posted on <span class="blur-[2px] select-none">▒▒▒ ▒▒, ▒▒▒▒</span> by <span class="text-gray-400">john cool</span> | <i class="fas fa-comments"></i> 0 Comments
+                    </div>
+                    <div class="story-content text-gray-300 font-serif text-lg mb-4">
+                        <p>... and mario turned at a 45 degree angle to look at me with hyperrealistic bloodeyes and it was at that moment i realized the game i bought might not have been what i thought. ...</p>
+                    </div>
+                    
+                    <!-- Simulated "Shitty JPG" -->
+                    <div class="bg-black p-1 inline-block border border-red-900 mb-4">
+                        <div id="mario-container" class="w-64 h-48 bg-gray-900 relative overflow-hidden flex items-center justify-center group cursor-pointer" onclick="revealMario(this)">
+                            <div class="absolute inset-0 bg-[url('https://placehold.co/400x300/300000/ff0000?text=MARIO.JPG')] bg-cover opacity-50 group-hover:opacity-80 transition-opacity duration-75"></div>
+                            <!-- Glitch effect overlay -->
+                            <div class="absolute inset-0 bg-red-900 mix-blend-overlay opacity-20"></div>
+                            <span class="relative z-10 font-mono text-red-600 font-bold bg-black px-2 select-none">CLICK TO VIEW</span>
+                        </div>
+                        <div class="text-center text-xs text-red-800 font-mono mt-1">mario.jpg (66.6 KB)</div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <a href="media/mario.jpg.png" target="_blank" class="text-sm text-gray-500 hover:text-gray-300">Read Full Story &raquo;</a>
+                    </div>
+                </article>
+
+                <!-- Pagination -->
+                <div class="flex justify-between items-center py-4 border-t border-gray-800">
+                    <a href="#" class="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-sm font-bold text-gray-300">&laquo; Previous Page</a>
+                    <span class="text-gray-500 text-sm">Page 1 of 66</span>
+                    <a href="#" class="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-sm font-bold text-gray-300">Next Page &raquo;</a>
+                </div>
+
+            </main>
+
+            <!-- Right Column: Sidebar -->
+            <aside class="w-full lg:w-1/3 space-y-8">
+                
+                <!-- Search Widget -->
+                <div class="bg-creepy-dark border border-gray-800 p-4">
+                    <h3 class="text-lg font-bold text-gray-400 border-b border-gray-700 pb-2 mb-3">SEARCH PASTAS</h3>
+                    <div class="flex">
+                        <input type="text" placeholder="Search..." class="w-full bg-black border border-gray-700 px-3 py-2 text-sm text-gray-300 focus:outline-none focus:border-creepy-red">
+                        <button class="bg-gray-800 px-3 border border-l-0 border-gray-700 text-gray-400 hover:text-white hover:bg-creepy-red transition-colors">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Top Rated -->
+                <div class="bg-creepy-dark border border-gray-800 p-4">
+                    <h3 class="text-lg font-bold text-gray-400 border-b border-gray-700 pb-2 mb-3">TOP RATED</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="#" class="text-link-red hover:underline hover:text-white block truncate">Steven the Stitcher</a>
+                            <span class="text-xs text-yellow-700">★★★★★ (9945)</span>
+                        </li>
+                        <li>
+                            <a href="#" class="text-link-red hover:underline hover:text-white block truncate">Bad Egg Glitch</a>
+                            <span class="text-xs text-yellow-700">★★★★★ (8821)</span>
+                        </li>
+                        <li>
+                            <a href="#" class="text-link-red hover:underline hover:text-white block truncate">Pokemon: Strangled Blue</a>
+                            <span class="text-xs text-yellow-700">★★★★☆ (7533)</span>
+                        </li>
+                        <li>
+                            <a href="#" class="text-link-red hover:underline hover:text-white block truncate">SWEET BRO AND HELLA JEFF GO TO HELL</a>
+                            <span class="text-xs text-yellow-700">★★★★★ (6201)</span>
+                        </li>
+                        <li>
+                            <a href="#" class="text-link-red hover:underline hover:text-white block truncate">Tales of the Vriskult</a>
+                            <span class="text-xs text-yellow-700">★☆☆☆☆ (5992)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Recent Comments -->
+                <div class="bg-creepy-dark border border-gray-800 p-4">
+                    <h3 class="text-lg font-bold text-gray-400 border-b border-gray-700 pb-2 mb-3">RECENT COMMENTS</h3>
+                    <ul class="space-y-3 text-xs text-gray-500 font-serif">
+                        <li class="border-b border-gray-800 pb-2">
+                            <span class="text-gray-400 font-bold">miniXsoda:</span> I swear I saw him outside my doorframe last night...
+                        </li>
+                        <li class="border-b border-gray-800 pb-2">
+                            <span class="text-gray-400 font-bold">CtenosaurVideo:</span> Miami Mike - I remember what you did to me at DragonCon.
+                        </li>
+                        <li class="border-b border-gray-800 pb-2">
+                            <span class="text-gray-400 font-bold">coda:</span> how to leave comments
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Random Button -->
+                <div class="text-center">
+                    <button onclick="window.location.href='townsend.html'" class="w-full bg-creepy-red text-white py-3 font-bold uppercase tracking-widest hover:bg-red-700 border border-red-900 shadow-[0_0_10px_rgba(138,0,0,0.5)] transition-all transform hover:scale-105">
+                        <i class="fas fa-dice mr-2"></i> Random Pasta
+                    </button>
+                </div>
+
+                <!-- Ad Placeholder (Classic Web Trope) -->
+                <div class="w-full h-64 bg-black border border-gray-800 flex flex-col items-center justify-center text-center p-4 opacity-50 hover:opacity-100 transition-opacity">
+                    <span class="text-gray-600 text-xs tracking-widest mb-2">ADVERTISEMENT</span>
+                    <div class="text-creepy-red font-mono text-sm blink">
+                        DO YOU WANT TO SEE <br> THE TRUTH?
+                    </div>
+                    <button class="mt-4 border border-gray-600 text-gray-500 text-xs px-2 py-1 hover:text-white hover:border-white">
+                        CLICK HERE
+                    </button>
+                </div>
+
+            </aside>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-600 text-xs pb-8">
+            <p class="mb-2">
+                &copy; <span class="blur-[2px] select-none">▒▒▒▒-▒▒▒▒</span> The Pasta Creependium. All stories are fictional... usually.
+            </p>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-gray-400">Terms of Use</a>
+                <a href="#" class="hover:text-gray-400">Contact</a>
+            </div>
+            <p class="mt-4 font-mono text-[10px] text-gray-800">
+                Rendered in 0.666 seconds.
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        // Function to handle the Mario image reveal
+        function revealMario(container) {
+            const img = document.createElement('img');
+            img.src = 'media/mario.jpg.png';
+            
+            // w-full + h-full with object-fill will stretch it to the container's box
+            // contrast/brightness filters
+            img.className = 'w-full h-full object-fill filter contrast-[1.5] brightness-75 sepia-[.3] hue-rotate-15 blur-[0.3px]';
+            
+            // Clear current content (the placeholder and text)
+            container.innerHTML = '';
+            
+            // Append the new image
+            container.appendChild(img);
+            
+            // Remove the onclick handler so it doesn't try to run again
+            container.removeAttribute('onclick');
+            container.classList.remove('cursor-pointer');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a');
+            const allowedHrefs = [
+                'https://youtu.be/1xhhql_gpDY',
+                'townsend.html',
+                'https://web.archive.org/web/20150317022702/https://forgotten-midgar.deviantart.com/art/The-Goat-Myth-Animal-Jam-458887102',
+                'media/mario.jpg.png'
+            ];
+
+            links.forEach(link => {
+                // Check if it's not in the allowed list AND it's not the internal Mario click handler (which is a div, not an a tag, but good to be safe)
+                if (!allowedHrefs.includes(link.getAttribute('href'))) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        alert("sorry, this link isn't working :(");
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

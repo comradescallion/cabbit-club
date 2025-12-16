@@ -3,9 +3,486 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discussion: Townsend - The Pasta Creependium</title>
+    <title>Discussion: TOWNSEND - The Pasta Creependium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'creepy-black': '#0a0a0a',
+                        'creepy-dark': '#1a1a1a',
+                        'creepy-red': '#8a0000',
+                        'creepy-text': '#cccccc',
+                        'wiki-bg': '#111111',
+                        'wiki-border': '#333333'
+                    },
+                    fontFamily: {
+                        'serif': ['Georgia', 'Times New Roman', 'serif'],
+                        'sans': ['Verdana', 'Arial', 'sans-serif'],
+                        'mono': ['Courier New', 'monospace']
+                    },
+                    backgroundImage: {
+                        'noise': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.05%22/%3E%3C/svg%3E')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #ccc;
+        }
+        
+        /* CRT Overlay Effect */
+        .crt-overlay {
+            pointer-events: none;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+            opacity: 0.15;
+        }
+
+        /* Wiki citation style */
+        .citation {
+            font-size: 0.75em;
+            vertical-align: super;
+            color: #4a9eff;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 2px;
+            font-family: 'Verdana', sans-serif;
+            transition: color 0.2s;
+        }
+        .citation:hover {
+            color: #8abfff;
+            text-decoration: underline;
+        }
+        
+        /* Sidebar transition */
+        #comment-sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        /* Scrollbar for sidebar */
+        .sidebar-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        .sidebar-scroll::-webkit-scrollbar-track {
+            background: #1a1a1a; 
+        }
+        .sidebar-scroll::-webkit-scrollbar-thumb {
+            background: #8a0000; 
+            border-radius: 4px;
+            border: 1px solid #000;
+        }
+
+        a.wiki-link {
+            color: #ff3333; /* Updated to match main site link red */
+            text-decoration: none;
+        }
+        a.wiki-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body>
-    discuss.
+<body class="font-sans min-h-screen bg-creepy-black bg-noise relative overflow-x-hidden text-gray-300">
+    <div class="crt-overlay"></div>
+
+    <!-- Header / Nav -->
+    <header class="bg-creepy-dark border-b border-creepy-red/30 py-4 mb-6">
+        <div class="container mx-auto max-w-6xl px-4 flex justify-between items-center">
+            <a href=".." class="text-2xl font-serif font-bold text-creepy-red tracking-tight hover:text-white transition-colors">
+                THE PASTA <span class="text-white">CREEPENDIUM</span>
+            </a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6 text-sm font-bold uppercase tracking-widest text-gray-500">
+                    <li><a href=".." class="hover:text-creepy-red">Home</a></li>
+                    <li><a href="#" class="hover:text-creepy-red text-white">Wiki</a></li>
+                    <li><a href="../townsend.html" class="hover:text-creepy-red">Back to Page</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mx-auto max-w-5xl px-4 pb-12 flex gap-8">
+        
+        <!-- Main Wiki Content -->
+        <main class="w-full">
+
+            <!-- Discussion Banner -->
+            <div class="bg-yellow-900/20 border border-yellow-700/50 p-4 mb-8 rounded flex items-start gap-4">
+                <i class="fas fa-comments text-yellow-500 text-2xl mt-1"></i>
+                <div>
+                    <h2 class="text-yellow-500 font-bold uppercase text-sm mb-1">Discussion Page: TOWNSEND</h2>
+                    <p class="text-sm text-gray-400">Welcome to the discussion page for <strong>Townsend</strong>! This page is meant to alleviate any confusion regarding the story. Feel free to suggest edits/leave comments! A team of editors will vote on what changes should be included.</p>
+                </div>
+            </div>
+
+            <!-- Page Title -->
+            <h1 class="text-3xl md:text-5xl font-serif text-white font-bold tracking-tight mb-6 border-b border-gray-800 pb-4 text-shadow-md">
+                Discussion: TOWNSEND
+            </h1>
+
+            <!-- Wiki Body -->
+            <div class="bg-creepy-dark border border-gray-800 p-8 text-gray-300 leading-relaxed text-lg shadow-lg relative">
+                <!-- Decorative accent -->
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-creepy-red to-transparent opacity-50"></div>
+                
+                <p class="mb-6">
+                    <strong>TOWNSEND</strong> is a work of fiction<a class="citation" onclick="openSidebar('fiction')">[9 comments]</a> written by an anonymous and currently unknown author<a class="citation" onclick="openSidebar('author')">[4 comments]</a>, reportedly on an independent blog<a class="citation" onclick="openSidebar('blog')">[3 comments]</a> that was taken down some time before the story would reach popularity.
+                </p>
+
+                <p class="mb-6">
+                    The work, formatted as an official document or report, possibly from the government, went over the phenomenon of a small town in Pennsylvania which seemingly acted as a digestive system for some creature. This includes the residents of the town. However, the clinical language of the work tries its best to avoid this description outright, dancing around it and using technical terms in order to obfuscate the horror.
+                </p>
+
+                <p class="mb-6">
+                    The work goes on to describe the "TOWNSEND EFFECT": Most who enter are initially thrilled to find such an inviting and friendly community, and end up making the choice to move there. The horror largely comes from the way the friendliness of the 'people' leads many to complacency. It lures them in. Notably, whenever someone disappears, a new house appears at the town's end. It is implied that the person/people who live there wear the same faces as the ones who disappeared, but treat them as entirely separate entities.
+                </p>
+
+                <p class="mb-6">
+                    The story abruptly ends with a note saying that there will be an effort to bar off the city, as there is a risk that if it keeps growing it could start bleeding into cities and other towns and put people at risk. The final line reads: "This page will be updated when progress has been made on this front."
+                </p>
+
+                <p class="mb-6">
+                    The original story in its entirety can be found here: <a href="https://pastebin.com/mbRi23sb" target="_blank" class="wiki-link text-blue-400 break-all">https://pastebin.com/mbRi23sb</a><a class="citation" onclick="openSidebar('pastebin')">[4 comments]</a>.
+                </p>
+
+                <p class="mb-6">
+                    The story has been praised for its inventive storytelling and concise yet effective worldbuilding.
+                </p>
+
+                <p class="mb-6">
+                    A second<a class="citation" onclick="openSidebar('second_version')">[4 comments]</a> version of the story was written not long<a class="citation" onclick="openSidebar('timeline')">[3 comments]</a> after the original, by <a href="../townsend.html" class="wiki-link">Giles_the_X</a>.
+                </p>
+
+                <p class="mb-6">
+                    This version takes the perspective of an actual narrator, who many have nicknamed Giles after the author. Giles must save his friend Wallace<a class="citation" onclick="openSidebar('wallace')">[8 comments]</a> from the town of Townsend<a class="citation" onclick="openSidebar('town_name')">[3 comments]</a>. On his journey, he encounters a similar atmosphere to the one mentioned in the original story. Finally, he meets Aglaope<a class="citation" onclick="openSidebar('aglaope_name')">[4 comments]</a>, who agrees to help him. After they devise a plan to find Wallace, they are implied to have sex<a class="citation" onclick="openSidebar('implication')">[5 comments]</a>. Giles wakes up in the middle of the night and records an audio clip seemingly to gloat about the experience, but is interrupted by Aggy<a class="citation" onclick="openSidebar('aggy_name')">[3 comments]</a> revealing her monstrous nature. As Giles makes his escape, the house is implied to become fleshy, and starts falling part.
+                </p>
+
+                <p class="mb-6">
+                    Giles makes his way to his car and drives past many residents. He sees something at the center of town, later revealed by an image at the end to be a strange flesh-like opening in the ground<a class="citation" onclick="openSidebar('flesh_opening')">[3 comments]</a>.
+                </p>
+
+                <p class="mb-6">
+                    Eventually, he sees "Wallace"<a class="citation" onclick="openSidebar('fake_wallace')">[3 comments]</a>, who obviously does not act like the person Giles knew. Wallace's house forms at the end of town, and Giles is able to escape.
+                </p>
+                
+                <p class="mb-6">
+                    The story ends with Giles reminiscing about his friend, and recounting a nightmare he had which makes the true nature of the town a little clearer<a class="citation" onclick="openSidebar('ending_meaning')">[3 comments]</a>.
+                </p>
+
+                <p class="mb-6">
+                    This rewrite of the story brought it to the relative popularity it has today<a class="citation" onclick="openSidebar('rewrite_reception')">[3 comments]</a>, although it was met with mixed reception. Many argue that the focus on a wise-cracking protagonist took the creepiness out, while others argue that the addition of actual characters to follow made this version better to follow, that it gave it stakes, and that the original is boring. Some noted its similarities to classic tales such as The Odyssey<a class="citation" onclick="openSidebar('odyssey_comparison')">[4 comments]</a>.
+                </p>
+
+                <p class="mb-6">
+                    A fandom culture has arisen around Townsend, with the most popular ships being Giles x Wallace<a class="citation" onclick="openSidebar('ship_wallace')">[7 comments]</a> and Giles x Aggy<a class="citation" onclick="openSidebar('ship_aggy')">[4 comments]</a>.
+                </p>
+
+                <p class="mb-6">
+                    Aglaope (nicknamed Aggy because no one could remember how to spell or pronounce Aglaope) became a bit of a mascot of the story<a class="citation" onclick="openSidebar('mascot_debate')">[3 comments]</a>, appearing in fanart has having disheveled dark hair, piercing green eyes (often bleeding), melting skin, and intestines wrapped around her body, often mimicking chains.
+                </p>
+
+                <p class="mb-6">
+                    Townsend is now better known for becoming a sore topic to anyone who brings it up, so we at The Pasta Creependium would appreciate if talk about it stops leaking into discussions of other, completely unrelated works. Thank you.<a class="citation" onclick="openSidebar('mod_complaints')">[5 comments]</a>
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Right Sidebar (Hidden by default) -->
+    <div id="comment-sidebar" class="fixed top-0 right-0 h-full w-96 bg-creepy-dark border-l border-gray-700 shadow-2xl transform translate-x-full z-[100] flex flex-col">
+        
+        <!-- Sidebar Header -->
+        <div class="p-4 border-b border-gray-700 bg-black flex justify-between items-center">
+            <h3 class="font-bold text-gray-200">Discussion Thread</h3>
+            <button onclick="closeSidebar()" class="text-gray-500 hover:text-white transition">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Sidebar Content Area -->
+        <div id="sidebar-content" class="flex-1 overflow-y-auto sidebar-scroll p-4 space-y-4">
+            <!-- Content injected via JS -->
+            <div class="text-center text-gray-500 mt-10">Select a citation to view comments.</div>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div class="p-4 border-t border-gray-700 bg-black text-center text-xs text-gray-500">
+            Thread is closed.
+        </div>
+    </div>
+
+    <!-- Backdrop for mobile -->
+    <div id="backdrop" onclick="closeSidebar()" class="fixed inset-0 bg-black/50 z-[90] hidden backdrop-blur-sm"></div>
+
+    <script>
+        const commentsData = {
+            'fiction': {
+                title: 'Subject: Authenticity Dispute',
+                count: '9 comments',
+                comments: [
+                    { user: 'User 1', text: 'Obviously fiction. The geography doesn\'t even match PA state lines. "Townsend" isn\'t on any census.' },
+                    { user: 'User 2', text: 'thanks for being part of the coverup, glowie. i drove past a sign for townsend in 2009. it exists.' },
+                    { user: 'User 3', text: 'TOWNSEND ISNT EVEN THE NAME OF THE TOWN IN THE ORIGINAL STORY DIPASS.' },
+                    { user: 'User 4', text: 'Please refrain from personal attacks. We are categorizing this as fiction until concrete proof is provided.' },
+                    { user: 'User 5', text: 'IT IS NOT FICTION. DELETE THIS PAGE. THEY ARE WATCHING.' },
+                    { user: 'User 6', text: 'Can we just appreciate the metaphor? It\'s clearly about suburban assimilation.' },
+                    { user: 'User 7', text: 'Giles says it\'s real, so it\'s real. End of story.' },
+                    { user: 'User 8', text: 'w8 where did he say that' },
+                    { user: 'User 9', text: 'just checked Google Earth. There is a blurred out patch of field near the in an area very similar to the one mentioned in the story. Just saying.' }
+                ]
+            },
+            'author': {
+                title: 'Subject: Original Author Identity',
+                count: '4 comments',
+                comments: [
+                    { user: 'User 1', text: 'writing style matches this guy i used to see on /x/ a bunch, i think he was a trip' },
+                    { user: 'User 2', text: 'Pretty sure it was a government leak that got scrubbed.' },
+                    { user: 'User 3', text: 'I do not know who wrote the report. I only found it.' },
+                    { user: 'User 4', text: 'Nice try Giles. We know you wrote both.' }
+                ]
+            },
+            'blog': {
+                title: 'Subject: Original Blog',
+                count: '3 comments',
+                comments: [
+                    { user: 'User 1', text: 'Does anyone have a Wayback Machine link? I can\'t remember what the site was called for the life of me.' },
+                    { user: 'User 2', text: 'story spread after the blog has been down for a while. mainly got posted on /x/ or send in pastebin links' },
+                    { user: 'User 3', text: 'I swear I saw the blog. It had this rly simple design like mimicking a govt website, it was pretty cool!' }
+                ]
+            },
+            'pastebin': {
+                title: 'Subject: Broken Link',
+                count: '4 comments',
+                comments: [
+                    { user: 'User 1', text: 'helloooo? link is totally doesnt work, any anyone else upload?' },
+                    { user: 'User 2', text: 'https://pastebin.com/SsRJmBtJ' },
+                    { user: 'User 3', text: 'That one\'s also down dude.' },
+                    { user: 'User 4', text: 'Someone keeps taking it down. I think some youtubers that covered it got copyright takedowns. Maybe the original author just hates the story now?' }
+                ]
+            },
+            'second_version': {
+                title: 'Subject: Original Version',
+                count: '4 comments',
+                comments: [
+                    { user: 'User 1', text: 'Giles here. My version was actually the first one, I had never even heard of that "original" before. Don\'t know when that one was created.' },
+                    { user: 'User 2', text: 'oh fuck off the ive got copies of the original with older timestamps than urs by like a year' },
+                    { user: 'User 3', text: 'thank god for this rewrite the original was so BORINGGG' },
+                    { user: 'User 4', text: 'I\'M LOSING MY MIND. WHY IS EVERYONE CALLING IT A "REWRITE". IT\'S. IT\'S LITERALLY A FANFICTION. WE HAVE A WORD FOR THIS, GUYS.' }
+                ]
+            },
+            'timeline': {
+                title: 'Subject: Date Discrepancy',
+                count: '3 comments',
+                comments: [
+                    { user: 'User 1', text: 'i swear to satan that i saw the original posted on some paranormal board back in like 06' },
+                    { user: 'User 2', text: 'its ur probably just getting confised about some early scp or something' },
+                    { user: 'User 3', text: 'This things BIRTHED scp as we know it, im just. im sure of it' }
+                ]
+            },
+            'wallace': {
+                title: 'Subject: Wallace',
+                count: '8 comments',
+                comments: [
+                    { user: 'User 1', text: 'im still bummed we never got to actually meet wallace. he reminds me of my weirdo friend, faha' },
+                    { user: 'User 2', text: 'I want to give birth to Wallace Townsend.' },
+                    { user: 'User 3', text: '???' },
+                    { user: 'User 4', text: '???' },
+                    { user: 'User 5', text: '???' },
+                    { user: 'User 6', text: '???' },
+                    { user: 'User 7', text: 'i understand' },
+                    { user: 'User 8', text: '???' }
+                ]
+            },
+            'town_name': {
+                title: 'Subject: Town Name Canonical?',
+                count: '3 comments',
+                comments: [
+                    { user: 'User 1', text: 'The town was purposefully unnamed in the original. Giles made the actual name of the town Townsend. its STUPID.' },
+                    { user: 'User 2', text: 'It makes it catchier though. Also "Townsend" = "Town\'s End"!! Get it?' },
+                    { user: 'User 3', text: 'WE ALL GET IT THATS THE STINGER AT THE END WE GET IT' }
+                ]
+            },
+            'aglaope_name': {
+                title: 'Subject: Aglaope / The Lady',
+                count: '4 comments',
+                comments: [
+                    { user: 'User 1', text: 'Aglaope was one of the Sirens in Greek mythology. "She of the splendid voice". It fits perfectly.' },
+                    { user: 'User 2', text: 'what is this, the melvin convention?' },
+                    { user: 'User 3', text: 'I thought her name was just "The Lady"? Was Aglaope ever actually in the text?' },
+                    { user: 'User 4', text: 'It is a fanon name that stuck.' }
+                ]
+            },
+            'implication': {
+                title: 'Subject: The Bedroom Scene',
+                count: '5 comments',
+                comments: [
+                    { user: 'User 1', text: 'y does everything have 2 be sexual with u ppl' },
+                    { user: 'User 2', text: 'If you wanna blame someone, blame Giles, he\'s the one who wrote his self-insert protag getting laid.' },
+                    { user: 'User 3', text: 'Hello, totally Giles here, that is in fact, without a doubt, true.' },
+                    { user: 'User 4', text: 'lulz' },
+                    { user: 'User 5', text: 'Creepypasta readers are immature and dont know how to deal with the topic sex in media. But that\'s okay, they\'re all 13.' }
+                ]
+            },
+            'aggy_name': {
+                title: 'Subject: Aggy??',
+                count: '3 comments',
+                comments: [
+                    { user: 'User 1', text: 'Stop calling her Aggy, it\'s too cute. SHE IS A PART OF A MONSTER THAT HAS KILLED SO MANY PEOPLE. SHE IS AN ELDRITCH ABOMINATION.' },
+                    { user: 'User 2', text: 'buddy do u know how to pronounce algaope' },
+                    { user: 'User 3', text: 'dont care!! aggy is my idol ^_^' }
+                ]
+            },
+            'flesh_opening': {
+                title: 'Subject: The Town Center',
+                count: '3 comments',
+                comments: [
+                    { user: 'User 1', text: 'thats a butt' },
+                    { user: 'User 2', text: 'That\'s NOT a butt. It is a mouth. The whole town is a stomach. The houses are the teeth. That being a butt wouldn\'t even make sense thematically. Go back to NeoPets, kid.' },
+                    { user: 'User 3', text: 'it looks like a blurred picture of a pothole in philly lel' }
+                ]
+            },
+            'fake_wallace': {
+                title: 'Subject: Wallace Identity',
+                count: '3 comments',
+                comments: [
+                    { user: 'User 1', text: 'Wait so that wasn\'t even wallace?' },
+                    { user: 'User 2', text: 'That wasn\'t Wallace. It was the monster projecting his appearance to trick Giles.' },
+                    { user: 'User 3', text: 'RIP Wallace. Would\'ve liked to hear his 9/11 theories.' }
+                ]
+            },
+            'ending_meaning': {
+                title: 'Subject: Nightmare',
+                count: '3 comments',
+                comments: [
+                    { user: 'User 1', text: 'I don\'t get the nightmare part. Why was he happy?' },
+                    { user: 'User 2', text: 'He was being digested. The happiness is the enzyme that makes you complacent. He is infected.' },
+                    { user: 'User 3', text: 'tf r u talking about did u make that up what is that. like srsly where r u getting that from ??????' }
+                ]
+            },
+            'rewrite_reception': {
+                title: 'Subject: Rewrite vs Original',
+                count: '3 comments',
+                comments: [
+                    { user: 'User 1', text: 'The original would have gotten popular if the original page didnt get deleted. You people ruin everything.' },
+                    { user: 'User 2', text: 'Giles added humor which made it bearable. The original was BOOORRINNGGGG.' },
+                    { user: 'User 3', text: 'Original = Scary. Rewrite = Action Movie. If I wanted to watch an action movie, I wouldnt be at the spookiest place on the net, dumbass.' }
+                ]
+            },
+            'odyssey_comparison': {
+                title: 'Subject: Odyssey Parallels',
+                count: '4 comments',
+                comments: [
+                    { user: 'User 1', text: 'what is this, the melvin convention?' },
+                    { user: 'User 2', text: 'This was probably written by the same people that nicknamed Aglaope lol. Trying to make it intellectual.' },
+                    { user: 'User 3', text: 'Come onnnn, this is what the storytelling tradition of creepypasta is all about! Evolution of myth!!! have a little fun :p' },
+                    { user: 'User 4', text: 'You know what, User 3? I like your attitude. I was being a debbie downer and that\'s on me.' }
+                ]
+            },
+            'ship_wallace': {
+                title: 'Subject: Giles x Wallace',
+                count: '7 comments',
+                comments: [
+                    { user: 'User 1', text: 'They are literally just friends. Why can\'t two men just be friends?' },
+                    { user: 'User 2', text: 'oh my gawwwd just let us have this. he literallyyy risked his life for him. and he couldn\'t stop worrying about him the whoollee timeee omggggg' },
+                    { user: 'User 3', text: 'Why is everything gay with you people?' },
+                    { user: 'User 4', text: 'Giles here. This was not supposed to be a homosexual relationship, people are misreading the story.' },
+                    { user: 'User 5', text: 'Giles here. I\'m fujoing out ohhhhhh ohhhhhhh' },
+                    { user: 'User 6', text: 'The protagonist is clearly straight. Are we forgetting about Aggy.' },
+                    { user: 'User 7', text: 'he was literally being manipulated by the town??? like that night he started regretting it. you ppl r so blind' }
+                ]
+            },
+            'ship_aggy': {
+                title: 'Subject: Giles x Aggy',
+                count: '4 comments',
+                comments: [
+                    { user: 'User 1', text: 'so jealous' },
+                    { user: 'User 2', text: 'AGLAOPE OH AGLAOPE OHHH' },
+                    { user: 'User 3', text: '??? She is a pile of meat and teeth.' },
+                    { user: 'User 4', text: 'look at the website ur on. and think about that.' }
+                ]
+            },
+            'mascot_debate': {
+                title: 'Subject: Aggy as Mascot',
+                count: '3 comments',
+                comments: [
+                    { user: 'User 1', text: 'This story doesn\'t need a mascot. Fandom ruined it.' },
+                    { user: 'User 2', text: 'Momm- I mean Aglaope is wonderful, though.' },
+                    { user: 'User 3', text: 'The fanart is sooo cool though, can you blame people. I love the intestine chains its so fun to draw ^_^' }
+                ]
+            },
+            'mod_complaints': {
+                title: 'Subject: Mod Abuse',
+                count: '5 comments',
+                comments: [
+                    { user: 'User 1', text: 'stfu mods looollll' },
+                    { user: 'User 2', text: 'This site used to be cool before the mods got on a power trip.' },
+                    { user: 'User 3', text: 'I agree. Even though I hate the rewrite, banning discussion is censorship.' },
+                    { user: 'User 4', text: 'Finally something we agree on. The mods are ruining the community.' },
+                    { user: 'MODERATOR', text: 'Thread locked. Read the rules.' }
+                ]
+            }
+        };
+
+        function openSidebar(key) {
+            const sidebar = document.getElementById('comment-sidebar');
+            const backdrop = document.getElementById('backdrop');
+            const contentDiv = document.getElementById('sidebar-content');
+            
+            // Populate content
+            const data = commentsData[key];
+            if (data) {
+                let html = `
+                    <div class="mb-4">
+                        <h4 class="text-white font-bold text-lg">${data.title}</h4>
+                        <span class="text-xs text-blue-400 bg-blue-400/10 px-2 py-1 rounded">${data.count}</span>
+                    </div>
+                    <div class="space-y-4">
+                `;
+                
+                data.comments.forEach(comment => {
+                    html += `
+                        <div class="bg-black border border-gray-800 p-3 rounded text-sm">
+                            <div class="flex justify-between mb-1">
+                                <span class="font-bold text-creepy-red text-xs">${comment.user}</span>
+                                <span class="text-gray-600 text-[10px] cursor-pointer hover:text-gray-400">Reply</span>
+                            </div>
+                            <p class="text-gray-400">${comment.text}</p>
+                        </div>
+                    `;
+                });
+                
+                html += `</div>`;
+                contentDiv.innerHTML = html;
+            } else {
+                contentDiv.innerHTML = '<p class="text-gray-500">Error loading comments.</p>';
+            }
+
+            // Show Sidebar
+            sidebar.classList.remove('translate-x-full');
+            backdrop.classList.remove('hidden');
+        }
+
+        function closeSidebar() {
+            const sidebar = document.getElementById('comment-sidebar');
+            const backdrop = document.getElementById('backdrop');
+            
+            sidebar.classList.add('translate-x-full');
+            backdrop.classList.add('hidden');
+        }
+    </script>
 </body>
 </html>

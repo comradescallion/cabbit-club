@@ -3,9 +3,677 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Townsend - The Pasta Creependium</title>
+    <title>TOWNSEND - The Pasta Creependium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'creepy-black': '#0a0a0a',
+                        'creepy-dark': '#1a1a1a',
+                        'creepy-red': '#8a0000',
+                        'creepy-text': '#cccccc',
+                        'link-red': '#ff3333'
+                    },
+                    fontFamily: {
+                        'serif': ['Georgia', 'Times New Roman', 'serif'],
+                        'sans': ['Verdana', 'Arial', 'sans-serif'],
+                        'mono': ['Courier New', 'monospace']
+                    },
+                    backgroundImage: {
+                        'noise': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.05%22/%3E%3C/svg%3E')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #ccc;
+        }
+        ::-webkit-scrollbar {
+            width: 12px;
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #550000;
+            border: 1px solid #000;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .story-content {
+            line-height: 1.8;
+            font-size: 1.15rem; /* Increased font size */
+        }
+        .story-content p {
+            margin-bottom: 1.5rem;
+        }
+        .transcript {
+            font-family: 'Courier New', monospace;
+            background-color: #0f0f0f;
+            border: 1px solid #333;
+            border-left: 3px solid #8a0000;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-size: 0.9em;
+            color: #a0a0a0;
+            box-shadow: inset 0 0 10px #000;
+        }
+        .crt-overlay {
+            pointer-events: none;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+            opacity: 0.15;
+        }
+    </style>
 </head>
-<body>
-    the authenticity of this version is disputed. click <a href="discussion/townsend.html">here</a> for more details.
+<body class="font-sans min-h-screen bg-creepy-black bg-noise relative text-gray-300">
+    <div class="crt-overlay"></div>
+
+    <!-- Authenticity Banner (Unique to Townsend) -->
+    <div class="bg-yellow-900/30 border-b border-yellow-700/50 text-yellow-500 text-center py-2 px-4 font-mono text-xs md:text-sm sticky top-0 z-50 backdrop-blur-sm">
+        <i class="fas fa-exclamation-triangle mr-2"></i>
+        THE AUTHENTICITY OF THIS PAGE HAS BEEN DISPUTED. 
+        <a href="discussion/townsend.html" class="underline font-bold hover:text-yellow-300 ml-1">Click here to learn more.</a>
+    </div>
+
+    <!-- Header / Nav (Simplified for sub-page) -->
+    <header class="bg-creepy-dark border-b border-creepy-red/30 py-4 mb-6">
+        <div class="container mx-auto max-w-6xl px-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-bold text-creepy-red tracking-tight hover:text-white transition-colors">
+                THE PASTA <span class="text-white">CREEPENDIUM</span>
+            </a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6 text-sm font-bold uppercase tracking-widest text-gray-500">
+                    <li><a href="index.html" class="hover:text-creepy-red">Home</a></li>
+                    <li><a href="#" class="hover:text-creepy-red text-white">Stories</a></li>
+                    <li><a href="#" class="hover:text-creepy-red">Characters</a></li>
+                    <li><a href="#" class="hover:text-creepy-red">Submit</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mx-auto max-w-6xl px-4 pb-12">
+        
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- Left Column: Main Content -->
+            <main class="w-full lg:w-3/4">
+
+                <!-- Breadcrumbs -->
+                <div class="text-xs text-gray-500 mb-4 font-sans uppercase tracking-wider">
+                    <a href="index.html" class="hover:text-white">Home</a> &raquo; 
+                    <a href="#" class="hover:text-white">Stories</a> &raquo; 
+                    <span class="text-creepy-red">Townsend</span>
+                </div>
+
+                <!-- Article Container -->
+                <article class="bg-creepy-dark border border-gray-800 p-6 md:p-10 shadow-lg relative overflow-hidden">
+                    
+                    <!-- Title Block -->
+                    <header class="mb-8 border-b border-gray-800 pb-6">
+                        <h1 class="text-3xl md:text-5xl font-serif text-white font-bold tracking-tight mb-3 text-shadow-md">
+                            TOWNSEND
+                        </h1>
+                        
+                        <div class="flex flex-wrap items-center gap-4 text-xs md:text-sm text-gray-500 font-sans">
+                            <span class="flex items-center">
+                                <i class="fas fa-user mr-2 text-creepy-red"></i> 
+                                <a href="#" class="hover:text-white transition-colors">Giles_the_X</a>
+                            </span>
+                            <span class="flex items-center">
+                                <i class="far fa-clock mr-2 text-creepy-red"></i> 
+                                <span class="blur-[2px]">▒▒▒ ▒▒, ▒▒▒▒</span>
+                            </span>
+                        </div>
+
+                        <!-- Rating Widget (Static) -->
+                        <div class="mt-4 flex items-center bg-black/50 p-2 rounded border border-gray-800 w-fit">
+                            <div class="text-yellow-600 mr-2 text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <span class="text-xs text-gray-400 font-bold">2.5 / 10</span>
+                        </div>
+                    </header>
+
+                    <!-- Story Text -->
+                    <div class="story-content text-gray-300 font-serif">
+                        
+                        <!-- Entry 1 -->
+                        <div class="mb-8">
+                            <h3 class="font-bold text-creepy-red text-lg mb-2 uppercase tracking-widest border-b border-gray-800 inline-block">Entry 1</h3>
+                            <p>Hello. I come to you all with a confession. I have never considered myself a very superstitious man, but I believe I may have encountered something... well, let me set the stage.</p>
+                            <p>See, the other day, my friend Wallace took a trip. Which, immediately was out of the ordinary for him. He's a bit of a shut in, you get the type. But when I tell you... he had become obsessed with something over the past few weeks or so. He called it a conspiracy, which, I suppose is nothing new for him... but the other day, he left to go... "find it." What "it" is, I don't know, but I haven't heard from him since. He isn't answering his cellphone, his Skype account hasn't been active... I'm worried about him. So I'm starting this blog as I try to find him to document anything I might find.</p>
+                            <p>And what I fear most... is that my psycho friend might have been onto something.</p>
+                        </div>
+
+                        <!-- Entry 2 -->
+                        <div class="mb-8">
+                            <h3 class="font-bold text-creepy-red text-lg mb-2 uppercase tracking-widest border-b border-gray-800 inline-block">Entry 2</h3>
+                            <p>I've been able to gather some info about what he was so obsessed with. He kept his window unlocked, so I was able to sneak in and get to his computer. He was researching this town called "Townsend". It's in the middle of nowhere Pennsylvania... I hope he's not just harassing a bunch of Amish people.</p>
+                            <p>It's hard to narrow down where this town is at all, there's barely any info about it online, and since it's such a generic name, my search results aren't the most helpful. For some reason I'm getting a bunch of random government websites whenever I search it up? Beats me.</p>
+                            <p>Fortunately, the nutcase left his notebook where he pinpointed the exact coordinates of the place. Latitude and longitude. Circled about a dozen times. I truly fear for what I find.</p>
+                            <p>I leave tomorrow, taking tonight to gather some things... just in case. I never thought he'd be a paranormal investigator, but sometimes life throws you a strange, strange bone.</p>
+                        </div>
+
+                        <!-- Entry 3 -->
+                        <div class="mb-8">
+                            <h3 class="font-bold text-creepy-red text-lg mb-2 uppercase tracking-widest border-b border-gray-800 inline-block">Entry 3</h3>
+                            <p>I find myself stopped on the side of the road because my GPS device is on the fritz. This has never happened before, it's one of the newest models.</p>
+                            <p>It keeps sending me down these weird back roads, and I swear I've gone in a circle at this point. I don't care anymore, I'm close enough, I'll just find the nearest gas station and ask about Townsend.</p>
+                        </div>
+
+                        <!-- Entry 4 -->
+                        <div class="mb-8">
+                            <h3 class="font-bold text-creepy-red text-lg mb-2 uppercase tracking-widest border-b border-gray-800 inline-block">Entry 4</h3>
+                            <p>Never mind, I found it. Driving for just another 30 minutes led me to the sign: WELCOME TO TOWNSEND! I cannot lie, I do not feel the most welcome.</p>
+                            <p>Going to go ask around. I doubt there's anyone else named Wallace in a town this small.</p>
+                        </div>
+
+                        <!-- Entry 5 -->
+                        <div class="mb-8">
+                            <h3 class="font-bold text-creepy-red text-lg mb-2 uppercase tracking-widest border-b border-gray-800 inline-block">Entry 5</h3>
+                            <p>So, I've driven around a bit, looking for... I dunno, a town hall or something, but it's just these houses that go on and on... this place is bigger than I thought. At least there are people walking around, or I'd start to get really unnerved.</p>
+                            <p>I swear, though, some of them look... familiar? I've never been to Pennsylvania before, it took me about four hours to get over here, but I swear I've seen a handful of these faces before. I am someone who watches the news a lot, so... maybe a lot of people travel out of this town? And end up on the news? I'm probably just tired. Gonna find someplace to park and go around on foot.</p>
+                        </div>
+
+                        <!-- Entry 6 -->
+                        <div class="mb-8">
+                            <h3 class="font-bold text-creepy-red text-lg mb-2 uppercase tracking-widest border-b border-gray-800 inline-block">Entry 6</h3>
+                            <p>I can't tell if I'm experiencing some sort of Pennsylvanian culture shock, or if everyone here is just... awfully strange. Call me jaded, but everyone here is far too cheerful. A man walked up to me, asked if I was new in town and immediately offered to make me a welcome gift basket. I politely declined, saying I was just stopping by, and he seemed so disappointed. Then I walked for another ten minutes, and it happened again. It's not like they were, like, kindly old folks who grew up with that sort of neighborly hospitality from the 50s, or whatever. These people were my age.</p>
+                            <p>Am I so unfriendly that this behavior would seem... alien to me? There's a chance, I suppose.</p>
+                            <p>Anyway, I've got no leads as to Wallace's whereabouts. Every time I describe him to people, they just think for a while, and shrug their shoulders. Almost everyone I've talked to has commented about how people "generally don't pass through", so I must be mistaken. I'm starting to think they're right. Wallace probably just ran off to some basement UFO enthusiast gathering or something.</p>
+                            <p>I'm looking for another hour, and then getting out of this creepy town.</p>
+                            <p>Eh... I guess I'm glad they're all so happy. Hell, maybe Townsend is just that great. Not my type of place though.</p>
+                        </div>
+
+                        <!-- Entry 7 -->
+                        <div class="mb-8">
+                            <h3 class="font-bold text-creepy-red text-lg mb-2 uppercase tracking-widest border-b border-gray-800 inline-block">Entry 7</h3>
+                            <p>You know, maybe I'm starting to come around to Townsend.</p>
+                            <p>I finally found someone with a lead. I was just about walking to my car, this lady in her yard caught my eye. I thought, whatever, I'll ask one more person, so I walk over and describe the situation, and when I describe him, her face actually sparks some recognition. She said she's saw him around for the first time a few days ago, and just assumed that he was either new or a reclusive guy who didn't leave his house much. Don't know how she was so accurate with that read, LOL.</p>
+                            <p>It was getting dark out, so she invited me in, and dear readers, this is one of the most beautiful women I have ever seen in my life. Her piercing green eyes, her shoulder length hair, jet-black...
+                            I'm almost glad no one else had any help before, haha. She made me a cup of coffee and we discussed what might be going on. She seems incredibly invested, which is a breath of fresh air from the small-talk niceties I've been dealing with all day.</p>
+                            <p>We've devised a plan to track him down with the help of the town tomorrow morning. The layout of the town is... I don't know how to describe this, she showed me a map, and it seems almost... fractal-like? Almost like a spiral, expanding outward. But not really? It gave me a headache to look at too long, I take it it's one of those things that only makes sense if you've lived there long enough. Anyway, she knows people from the outer edges of town, and if we search from there inwards, we should find him before we reach the center of town.</p>
+                            <p>In the meantime, however, I should get ready to go to bed soon. She so graciously invited me to stay the night so I wouldn't have to sleep in my car... although, unfortunately, her place is so small that there isn't really anywhere else to sleep than in her bed. Wink. I'm writing this while she's getting ready for bed in the bathroom, and I must say, I am delighted that Wallace decided to run off to Townsend.</p>
+                            <p>Dear readers, I will see you bright and early ;D</p>
+                        </div>
+
+                        <!-- Entry 8 -->
+                        <div class="mb-8">
+                            <h3 class="font-bold text-creepy-red text-lg mb-2 uppercase tracking-widest border-b border-gray-800 inline-block">Entry 8</h3>
+                            <div class="transcript">
+                                <p class="mb-4 font-bold text-creepy-red tracking-widest">[TRANSCRIBED FROM AUDIO RECORDING]</p>
+                                
+                                <p>I don't mean to be too boastful, but... heh...</p>
+                                <p>Tonight has been informative so far.</p>
+                                <p>Just woke up, it's the middle of the night, and she's... I dunno, in the bathroom or something, so I thought I'd record something really quickly in order to remember just how...</p>
+                                <p>Um...</p>
+                                <p>I dunno if my mic is picking this up, but...</p>
+                                <p>Is she sick or something? Hope I didn't contract any backwoods Pennsylvania disease from that, oh God...</p>
+                                <p>...</p>
+                                <p>Haha, I'm just being paranoid...</p>
+                                <p>...</p>
+                                <p>Maybe I should get outta-</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[THE CREAKING OF A DOOR]</p>
+                                <p class="text-creepy-red font-bold italic">[THE SOUND OF WOMAN'S VOICE]</p>
+                                <p class="text-creepy-red font-bold italic">[SHE MAKES A SOUND THAT SOUNDS ALMOST LIKE A COUGH, BUT MOSTLY LIKE STATIC]</p>
+                                <br>
+                                <p><span class="text-white font-bold">HER:</span> Sorry about that, I've been feeling a bit under the weather! Haha.</p>
+                                <br>
+                                <p><span class="text-white font-bold">ME:</span> No, don't... don't worry about it.</p>
+                                <p>You know, I was thinking, maybe it would be best if I just... kept an eye on my car or something for the night... Not to be offensive, you have a lovely... home...</p>
+                                <br>
+                                <p><span class="text-white font-bold">HER:</span> Aw, come on, don't be like that! Come here-</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[HER VOICE SLIPS INTO SOMETHING MORE GUTTURAL FOR A MOMENT]</p>
+                                <br>
+                                <p><span class="text-white font-bold">ME:</span> No, I think-</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[A SOUND LIKE A WET SLAP AGAINST HARDWOOD]</p>
+                                <br>
+                                <p><span class="text-white font-bold">HER (almost growling):</span> Please, you MUST join us!</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[THE SOUND OF WHOOSHING]</p>
+                                <p class="text-creepy-red font-bold italic">[I EXCLAIM IN PAIN]</p>
+                                <p class="text-creepy-red font-bold italic">[THE SOUND OF A COAT RUSTLING]</p>
+                                <p class="text-creepy-red font-bold italic">[AN IMPACT]</p>
+                                <p class="text-creepy-red font-bold italic">[SHE SHRIEKS]</p>
+                                <p class="text-creepy-red font-bold italic">[HURRIED FOOTSTEPS]</p>
+                                <p class="text-creepy-red font-bold italic">[A CAVERNOUS DRIPPING SOUND]</p>
+                                <p class="text-creepy-red font-bold italic">[SHRIEKING CONTINUES, FURTHER AWAY NOW]</p>
+                                <p class="text-creepy-red font-bold italic">[A DOOR SLAMS, MAKES A SQUELCHING NOISE AS IT DOES]</p>
+                                <br>
+                                <p class="mb-2 font-bold text-creepy-red">[END OF RECORDING]</p>
+                            </div>
+                        </div>
+
+                        <!-- Entry 9 -->
+                        <div class="mb-8">
+                            <h3 class="font-bold text-creepy-red text-lg mb-2 uppercase tracking-widest border-b border-gray-800 inline-block">Entry 9</h3>
+                            <div class="transcript">
+                                <p class="mb-4 font-bold text-creepy-red tracking-widest">[TRANSCRIBED FROM AUDIO RECORDING]</p>
+                                <p class="text-creepy-red font-bold italic">[SOUND OF A CAR HUMMING]</p>
+                                <br>
+                                <p>I knew... UGH I should have known something was off...</p>
+                                <p>She was... too perfect...</p>
+                                <p>The way... her house started... bleeding? Melting?</p>
+                                <p>I...</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[CAR HORN BLARES]</p>
+                                <br>
+                                <p>GET OUT OF THE ROAD! YOU MANIAC!</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[TIRES SCREECH AS CAR TURNS BACK]</p>
+                                <br>
+                                <p>UGH... I should've grabbed that map, I have no idea where I'm going...</p>
+                                <p>...</p>
+                                <p>Wh-</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[IN A HUSHED TONE]</p>
+                                <br>
+                                <p>Everyone is coming out of their houses.</p>
+                                <p>All at once.</p>
+                                <p>...</p>
+                                <p>I... am not inherently against vehicular manslaughter if it's a means for survival...</p>
+                                <p>...</p>
+                                <p>They're...</p>
+                                <p>They're just waving at me?!</p>
+                                <p>Jesus, I should have never-</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[CAR SCREECHES TO A HALT]</p>
+                                <br>
+                                <p>What in the-</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[A STATIC BUZZ BEGINS TO DISTORT THE RECORDING]</p>
+                                <br>
+                                <p>The... center of town...</p>
+                                <p>Shit, I should... really...</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[RUSTLING]</p>
+                                <p class="text-creepy-red font-bold italic">[CAMERA SHUTTER]</p>
+                                <br>
+                                <p>God, what even is...</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[VOICES OF A CROWD GROW NEARER]</p>
+                                <br>
+                                <p>Oh SHIT, that's right.</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[REVVING OF CAR ENGINE]</p>
+                                <p class="text-creepy-red font-bold italic">[MUFFLED SOUND OF A CROWD]</p>
+                                <p class="text-creepy-red font-bold italic">[SOUNDS ALMOST FRIENDLY]</p>
+                                <p class="text-creepy-red font-bold italic">[UNABLE TO MAKE OUT ANY WORDS]</p>
+                                <p class="text-creepy-red font-bold italic">[A THUD]</p>
+                                <p class="text-creepy-red font-bold italic">[A CRACK OF THE WINDSHIELD]</p>
+                                <br>
+                                <p>Shit, shit, shit...</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[CAR CONTINUES TO DRIVE]</p>
+                                <p class="text-creepy-red font-bold italic">[CROWD CHATTER FADES AWAY]</p>
+                                <p class="text-creepy-red font-bold italic">[HEAVY BREATHING]</p>
+                                <br>
+                                <p>I... oh my God, did they... is he dead? Is he...</p>
+                                <p>...</p>
+                                <p class="text-creepy-red font-bold italic">[TIRED SCREECH]</p>
+                                <br>
+                                <p>WALLACE?!</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[CAR DOOR]</p>
+                                <br>
+                                <p><span class="text-white font-bold">WALLACE:</span> Hey there, you here to visit me?</p>
+                                <br>
+                                <p><span class="text-white font-bold">ME:</span> V-visit you? I don't...</p>
+                                <p>Ugh, WHO CARES. GET IN THE CAR!</p>
+                                <br>
+                                <p><span class="text-white font-bold">WALLACE:</span> Huh?</p>
+                                <br>
+                                <p><span class="text-white font-bold">ME:</span> Wallace, this place isn't right, you just gotta trust me.</p>
+                                <p>I mean, didn't you come here to investigate?</p>
+                                <br>
+                                <p><span class="text-white font-bold">WALLACE:</span> Investigate? I live here, haha.</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[HESITATING, HEAVY BREATHING]</p>
+                                <br>
+                                <p><span class="text-white font-bold">ME:</span> I don't have TIME for this.</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[SOUND OF A STRUGGLE BETWEEN THE TWO]</p>
+                                <br>
+                                <p><span class="text-white font-bold">WALLACE:</span> I'd really appreciate it if you lay off-</p>
+                                <br>
+                                <p><span class="text-white font-bold">ME:</span> COME ON. WE'RE LEAVING.</p>
+                                <br>
+                                <p><span class="text-white font-bold">WALLACE:</span> You seem really upset by something, I can make you some tea? Just come with-</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[STRUGGLE CONTINUES]</p>
+                                <p class="text-creepy-red font-bold italic">[THUD, FOLLOWED BY A GRUNT]</p>
+                                <br>
+                                <p><span class="text-white font-bold">Me:</span> Shit... I'm sorry, Wallace, I...</p>
+                                <p>They must've did something to your brain or something... I'll get you to a hospital or something... once we're out of here.</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[CAR DOOR OPENS]</p>
+                                <p class="text-creepy-red font-bold italic">[GRUNT]</p>
+                                <p class="text-creepy-red font-bold italic">[CAR DOOR CLOSES]</p>
+                                <p class="text-creepy-red font-bold italic">[ENGINE REVS UP]</p>
+                                <br>
+                                <p><span class="text-white font-bold">ME:</span> Oh God, oh fuck, oh God, oh fuck...</p>
+                                <p>...</p>
+                                <p>EDGE OF TOWN!!! We're almost there, come on, come on...</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[WALLACE STIRS]</p>
+                                <br>
+                                <p><span class="text-white font-bold">WALLACE (weakly):</span> W-ait... l-look... it's my house...</p>
+                                <br>
+                                <p><span class="text-white font-bold">ME:</span> Huh? That's an empty lo-</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[UNGODLY FLESH-LIKE SQUELCHING FROM OUTSIDE]</p>
+                                <br>
+                                <p><span class="text-white font-bold">ME:</span> Wh-</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[SOUND OF DRIPPING? MELTING?]</p>
+                                <br>
+                                <p><span class="text-white font-bold">ME:</span> W-wallace?!</p>
+                                <br>
+                                <p><span class="text-white font-bold">WALLACE (from outside):</span> See you later! Come back soon, huh?</p>
+                                <br>
+                                <p class="text-creepy-red font-bold italic">[CAR SPEEDS UP]</p>
+                                <p class="mb-2 font-bold text-creepy-red">[END OF RECORDING]</p>
+                            </div>
+                        </div>
+
+                        <!-- Entry 10 -->
+                        <div class="mb-8">
+                            <h3 class="font-bold text-creepy-red text-lg mb-2 uppercase tracking-widest border-b border-gray-800 inline-block">Entry 10</h3>
+                            <p>I don't think I ever found Wallace. That thing I found... that wasn't him.</p>
+                            <p>That thing that melted into my car seat and reformed outside?</p>
+                            <p>That thing that was part of a neighborly community?</p>
+                            <p>I don't think so.</p>
+                            <p>If I'm being optimistic, that was just some projection of him the town created to trick me. But the way a house just... appeared for him. Like the town created a place for just him. And that thing at the center of town. I just... I don't even know what to think.</p>
+                            <p>It's been about a two weeks since I've escaped Townsend, Pennsylvania. There's been no word from Wallace, but I still hold a naive hope that he's out there somewhere. The real him.</p>
+                            <p>Out of desperation, maybe stupidity, maybe pure, sheer curiosity, I tried driving back to that place the other day. I couldn't find it. I found that same road where I had given up before, but no sign of the town. No sign of... much, really. The area felt a lot more desolate than before, even the ground looked more dead.</p>
+                            <p>I've refrained from reaching out to anyone about this, until now, because... Well, I don't want anyone less lucky than me to make the mistake that I did. However, people need to know. For my own sanity, I need people to know.</p>
+                            <p>This will be my final entry. I will attach the photo I was able to take in the center of town. I'm not sure... what exactly it is, but maybe someone else will have a better idea.</p>
+                            <p>I had a nightmare last night. I was back there, and I was poking around in the center of town, getting closer to it... Then something flashed.</p>
+                            <p>And suddenly... I felt so happy. So safe, so calm.</p>
+                            <p>I stood on a lawn of my very own, and looked proudly at my brand new house at the town's end.</p>
+
+                            <!-- Photo Attachment -->
+                            <div class="mt-8 mb-4 border-4 border-white p-2 bg-white transform rotate-1 shadow-lg max-w-md mx-auto">
+                                <div class="bg-gray-100 h-64 w-full flex flex-col items-center justify-center border border-gray-300 relative overflow-hidden select-none">
+                                    <i class="far fa-image text-4xl text-gray-400 mb-2"></i>
+                                    <span class="text-xs text-gray-500 font-sans">The image could not be loaded.</span>
+                                </div>
+                                <div class="text-black font-mono text-center text-xs mt-2 uppercase tracking-wider">CENTER_OF_TOWN.JPG</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article Footer / Sharing -->
+                    <div class="border-t border-b border-gray-800 py-6 mt-12 mb-8">
+                        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                            <span class="text-sm font-bold uppercase tracking-widest text-gray-500">Share this Pasta:</span>
+                            <div class="flex items-center gap-2">
+                                <div class="flex border border-gray-700 bg-black">
+                                    <input type="text" value="https://cabbit.club/TOWNSEND/thepastacreependium/townsend.html" class="bg-transparent text-gray-500 text-xs px-3 py-2 w-48 md:w-64 focus:outline-none font-mono" readonly id="share-url">
+                                    <button onclick="copyToClipboard()" class="bg-gray-800 text-gray-400 px-3 border-l border-gray-700 hover:text-white hover:bg-creepy-red transition-colors" title="Copy Link">
+                                        <i class="fas fa-link"></i>
+                                    </button>
+                                </div>
+                                <span id="copy-msg" class="text-xs text-creepy-red font-bold opacity-0 transition-opacity duration-300">COPIED</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comments Section -->
+                    <div id="comments">
+                        <h3 class="text-xl font-bold text-white mb-6 border-l-4 border-creepy-red pl-3">
+                            284 COMMENTS
+                        </h3>
+
+                        <!-- Add Comment Form -->
+                        <div class="bg-creepy-dark border border-gray-800 p-6 mb-8 shadow-lg">
+                            <h4 class="text-md font-bold text-gray-400 mb-4">LEAVE A COMMENT</h4>
+                            <form onsubmit="event.preventDefault(); alert('Error: Connection to server lost.');">
+                                <div class="mb-4">
+                                    <input type="text" placeholder="Name (Optional)" class="w-full bg-black border border-gray-700 px-3 py-2 text-sm text-gray-300 focus:outline-none focus:border-creepy-red font-mono">
+                                </div>
+                                <div class="mb-4">
+                                    <textarea rows="4" placeholder="Join the discussion..." class="w-full bg-black border border-gray-700 px-3 py-2 text-sm text-gray-300 focus:outline-none focus:border-creepy-red font-mono"></textarea>
+                                </div>
+                                <button type="submit" class="bg-creepy-red text-white px-6 py-2 text-sm font-bold uppercase tracking-widest hover:bg-red-700 transition-colors">
+                                    Post Comment
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- Comment 1 -->
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-pink-900 flex-shrink-0 border border-gray-700"></div>
+                                <div class="flex-1 bg-creepy-dark/50 p-3 border border-gray-800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm font-bold text-creepy-red">1ns4n3_4t_h4rt</span>
+                                        <span class="text-xs text-gray-600 blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒ at ▒▒:▒▒ ▒▒</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">Hi!! I really liked your story! :)</p>
+                                </div>
+                            </div>
+
+                            <!-- Comment 2 -->
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-gray-900 flex-shrink-0 border border-gray-700"></div>
+                                <div class="flex-1 bg-creepy-dark/50 p-3 border border-gray-800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm font-bold text-creepy-red">michael</span>
+                                        <span class="text-xs text-gray-600 blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒ at ▒▒:▒▒ ▒▒</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">I HATE YOU I HATE YOU I HATE YOU I HATE YOU I HATE YOU</p>
+                                </div>
+                            </div>
+
+                            <!-- Comment 3 -->
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-blue-900 flex-shrink-0 border border-gray-700"></div>
+                                <div class="flex-1 bg-creepy-dark/50 p-3 border border-gray-800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm font-bold text-creepy-red">ECLIPSE-WHISPER</span>
+                                        <span class="text-xs text-gray-600 blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒ at ▒▒:▒▒ ▒▒</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">wow. really nice. i liked the part where it ended.</p>
+                                </div>
+                            </div>
+
+                            <!-- Comment 4 -->
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-black flex-shrink-0 border border-gray-700"></div>
+                                <div class="flex-1 bg-creepy-dark/50 p-3 border border-gray-800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm font-bold text-creepy-red">MiamiMike</span>
+                                        <span class="text-xs text-gray-600 blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒ at ▒▒:▒▒ ▒▒</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">I remember what you did at CreepCon, Giles.</p>
+                                </div>
+                            </div>
+
+                            <!-- Comment 5 -->
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-purple-900 flex-shrink-0 border border-gray-700"></div>
+                                <div class="flex-1 bg-creepy-dark/50 p-3 border border-gray-800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm font-bold text-creepy-red">theXkillXmasterX9000</span>
+                                        <span class="text-xs text-gray-600 blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒ at ▒▒:▒▒ ▒▒</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">liked ur story a lot, but i have a few critiques... u painted a pretty good picture of this place, but i just wanted MOAR!!! you know? i understand that u had to build up this narrator but i feel like we spend too much time in his own head, and not enough time exploring this strange, surreal environment. otherwise, it was a fun read! can't wait to see what u make next!</p>
+                                </div>
+                            </div>
+
+                            <!-- Comment 6 -->
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-pink-600 flex-shrink-0 border border-gray-700"></div>
+                                <div class="flex-1 bg-creepy-dark/50 p-3 border border-gray-800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm font-bold text-creepy-red">luvin_deth</span>
+                                        <span class="text-xs text-gray-600 blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒ at ▒▒:▒▒ ▒▒</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">GILES DONT LISTEN TO THEM I LOVE UR STORY OMGGGG WALLACE IS SUCH A LITTOL CUTIEEEEEEE</p>
+                                </div>
+                            </div>
+
+                            <!-- Comment 7 -->
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-red-600 flex-shrink-0 border border-gray-700"></div>
+                                <div class="flex-1 bg-creepy-dark/50 p-3 border border-gray-800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm font-bold text-creepy-red">TheJake777</span>
+                                        <span class="text-xs text-gray-600 blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒ at ▒▒:▒▒ ▒▒</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">hot</p>
+                                </div>
+                            </div>
+
+                            <!-- Comment 8 -->
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-yellow-800 flex-shrink-0 border border-gray-700"></div>
+                                <div class="flex-1 bg-creepy-dark/50 p-3 border border-gray-800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm font-bold text-creepy-red">john cool</span>
+                                        <span class="text-xs text-gray-600 blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒ at ▒▒:▒▒ ▒▒</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">is this reel becoas i live in Pennsylvania and i dont want to acidently go to town send that sounds scary but i like that a pretty ladie lives there</p>
+                                </div>
+                            </div>
+
+                            <!-- Comment 9 -->
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-gray-600 flex-shrink-0 border border-gray-700"></div>
+                                <div class="flex-1 bg-creepy-dark/50 p-3 border border-gray-800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm font-bold text-creepy-red">LikeClockwork</span>
+                                        <span class="text-xs text-gray-600 blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒ at ▒▒:▒▒ ▒▒</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">loser virgin lol</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Comment 10 (Author Response) -->
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-creepy-red flex-shrink-0 border border-yellow-500"></div>
+                                <div class="flex-1 bg-yellow-900/10 p-3 border border-yellow-700/30">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm font-bold text-yellow-500">Giles_the_X <span class="bg-yellow-500 text-black px-1 ml-1 text-[9px] uppercase rounded-sm">Author</span></span>
+                                        <span class="text-xs text-gray-600 blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒ at ▒▒:▒▒ ▒▒</span>
+                                    </div>
+                                    <p class="text-sm text-gray-300">Drowned_Grl666, I do appreciate your support, but I need you to understand that this is not a homosexual work. The main character is not "gay in love" with Wallace, and I would appreciate if this misunderstanding is corrected.</p>
+                                </div>
+                            </div>
+
+                            <!-- Pagination -->
+                            <div class="flex justify-center items-center py-6">
+                                <div class="flex space-x-1 items-center">
+                                    <span class="px-3 py-1 bg-creepy-red text-white text-xs font-bold">1</span>
+                                    <a href="#" class="px-3 py-1 bg-gray-800 text-gray-400 text-xs hover:bg-gray-700">2</a>
+                                    <a href="#" class="px-3 py-1 bg-gray-800 text-gray-400 text-xs hover:bg-gray-700">3</a>
+                                    <span class="text-gray-500 text-xs px-2">...</span>
+                                    <a href="#" class="px-3 py-1 bg-gray-800 text-gray-400 text-xs hover:bg-gray-700">28</a>
+                                    <a href="#" class="px-3 py-1 bg-gray-800 text-gray-400 text-xs hover:bg-gray-700">29</a>
+                                    <a href="#" class="px-3 py-1 bg-gray-800 text-gray-400 text-xs hover:bg-gray-700">Next &raquo;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+            </main>
+
+            <!-- Right Column: Sidebar (Added to match reference) -->
+            <aside class="w-full lg:w-1/4 space-y-8">
+                
+                <!-- Search Widget -->
+                <div class="bg-creepy-dark border border-gray-800 p-4 shadow-lg">
+                    <h3 class="text-lg font-bold text-gray-400 border-b border-gray-700 pb-2 mb-3">SEARCH</h3>
+                    <div class="flex">
+                        <input type="text" placeholder="Search archives..." class="w-full bg-black border border-gray-700 px-3 py-2 text-sm text-gray-300 focus:outline-none focus:border-creepy-red">
+                        <button class="bg-gray-800 px-3 border border-l-0 border-gray-700 text-gray-400 hover:text-white hover:bg-creepy-red transition-colors">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Random Button -->
+                <div class="text-center">
+                    <button onclick="window.location.href='townsend.html'" class="w-full bg-creepy-red text-white py-3 font-bold uppercase tracking-widest hover:bg-red-700 border border-red-900 shadow-[0_0_10px_rgba(138,0,0,0.5)] transition-all transform hover:scale-105">
+                        <i class="fas fa-dice mr-2"></i> Random Pasta
+                    </button>
+                </div>
+
+                <!-- Ad Placeholder -->
+                <div class="w-full h-64 bg-black border border-gray-800 flex flex-col items-center justify-center text-center p-4 opacity-50 hover:opacity-100 transition-opacity">
+                    <span class="text-gray-600 text-xs tracking-widest mb-2">ADVERTISEMENT</span>
+                    <div class="text-creepy-red font-mono text-sm blink">
+                        KNOW YOUR RIGHTS. DON'T GET SCAMMED BY UNFAIR TRADES. POKEMON VALUES COM
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+
+        <footer class="mt-12 text-center text-xs text-gray-600 border-t border-gray-800 pt-8">
+            <p class="mb-2">
+                &copy; <span class="blur-[2px] select-none">▒▒▒▒-▒▒▒▒</span> The Pasta Creependium. All stories are fictional... usually.
+            </p>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-gray-400">Terms of Use</a>
+                <a href="#" class="hover:text-gray-400">Contact</a>
+            </div>
+            <br>
+            <a href="index.html" class="hover:text-gray-400">&laquo; Return to Homepage</a>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const copyText = document.getElementById("share-url");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+            document.execCommand("copy");
+            
+            const msg = document.getElementById('copy-msg');
+            msg.classList.remove('opacity-0');
+            setTimeout(() => {
+                msg.classList.add('opacity-0');
+            }, 2000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a');
+            // Allow home link and self links
+            const allowedHrefs = [
+                'index.html',
+                'townsend.html',
+                'discussion/townsend.html'
+            ];
+
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && !allowedHrefs.includes(href)) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        alert("sorry, this link isn't working :(");
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
