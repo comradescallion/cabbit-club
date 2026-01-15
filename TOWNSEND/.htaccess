@@ -1,0 +1,18 @@
+RewriteEngine On
+
+# www to non-www canonical redirect
+RewriteCond %{HTTP_HOST} ^www\.(.+) [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Convert all URLs to lowercase
+RewriteCond expr "tolower(%{REQUEST_URI}) =~ /(.*)/"
+RewriteRule [A-Z] %1 [R=301,L]
+
+# Remove ".html" extension only if this maps to a real file (in root only)
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^([\w-]+)\.html$ /$1 [R=301,L]
+
+# Append ".html" if this matches a real file (in root only)
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^([\w-]+)$ $1.html [L]
