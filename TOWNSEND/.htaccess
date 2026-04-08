@@ -5,8 +5,10 @@ RewriteCond %{HTTP_HOST} ^www\.(.+) [NC]
 RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
 # Convert all URLs to lowercase
-RewriteCond expr "tolower(%{REQUEST_URI}) =~ /(.*)/"
-RewriteRule [A-Z] %1 [R=301,L]
+<IfModule mod_speling.c>
+    CheckSpelling On
+    CheckCaseOnly On
+</IfModule>
 
 # Remove ".html" extension only if this maps to a real file (in root only)
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
