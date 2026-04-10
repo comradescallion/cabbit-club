@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coming clean - The Pasta Creependium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'creepy-black': '#0a0a0a',
+                        'creepy-dark': '#1a1a1a',
+                        'creepy-red': '#8a0000',
+                        'creepy-text': '#cccccc',
+                        'link-red': '#ff3333'
+                    },
+                    fontFamily: {
+                        'serif': ['Georgia', 'Times New Roman', 'serif'],
+                        'sans': ['Verdana', 'Arial', 'sans-serif'],
+                        'mono': ['Courier New', 'monospace']
+                    },
+                    backgroundImage: {
+                        'noise': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.05%22/%3E%3C/svg%3E')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #ccc;
+        }
+        ::-webkit-scrollbar {
+            width: 12px;
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #550000;
+            border: 1px solid #000;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .story-content {
+            line-height: 1.8;
+            font-size: 1.15rem; /* Increased font size */
+        }
+        .story-content p {
+            margin-bottom: 1.5rem;
+        }
+        .transcript {
+            font-family: 'Courier New', monospace;
+            background-color: #0f0f0f;
+            border: 1px solid #333;
+            border-left: 3px solid #8a0000;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-size: 0.9em;
+            color: #a0a0a0;
+            box-shadow: inset 0 0 10px #000;
+        }
+        .crt-overlay {
+            pointer-events: none;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+            opacity: 0.15;
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen bg-creepy-black bg-noise relative text-gray-300">
+    <div class="crt-overlay"></div>
+    <!-- Header / Nav (Simplified for sub-page) -->
+    <header class="bg-creepy-dark border-b border-creepy-red/30 py-4 mb-6">
+        <div class="container mx-auto max-w-6xl px-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-bold text-creepy-red tracking-tight hover:text-white transition-colors">
+                THE PASTA <span class="text-white">CREEPENDIUM</span>
+            </a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6 text-sm font-bold uppercase tracking-widest text-gray-500">
+                    <li><a href="index.html" class="hover:text-creepy-red">Home</a></li>
+                    <li><a href="#" class="hover:text-creepy-red text-white">Stories</a></li>
+                    <li><a href="#" class="hover:text-creepy-red">Characters</a></li>
+                    <li><a href="#" class="hover:text-creepy-red">Submit</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mx-auto max-w-6xl px-4 pb-12">
+        
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- Left Column: Main Content -->
+            <main class="w-full lg:w-3/4">
+
+                <!-- Breadcrumbs -->
+                <div class="text-xs text-gray-500 mb-4 font-sans uppercase tracking-wider">
+                    <a href="index.html" class="hover:text-white">Home</a> &raquo; 
+                    <a href="#" class="hover:text-white">Stories</a> &raquo; 
+                    <span class="text-creepy-red">coming clean</span>
+                </div>
+
+                <!-- Article Container -->
+                <article class="bg-creepy-dark border border-gray-800 p-6 md:p-10 shadow-lg relative overflow-hidden">
+                    
+                    <!-- Title Block -->
+                    <header class="mb-8 border-b border-gray-800 pb-6">
+                        <h1 class="text-3xl md:text-5xl font-serif text-white font-bold tracking-tight mb-3 text-shadow-md">
+                            coming clean
+                        </h1>
+                        
+                        <div class="flex flex-wrap items-center gap-4 text-xs md:text-sm text-gray-500 font-sans">
+                            <span class="flex items-center">
+                                <i class="fas fa-user mr-2 text-creepy-red"></i> 
+                                <a href="user/giles_the_x.html" class="hover:text-white transition-colors">Giles_the_X</a>
+                            </span>
+                            <span class="flex items-center">
+                                <i class="far fa-clock mr-2 text-creepy-red"></i> 
+                                <span class="blur-[2px]">▒▒▒ ▒▒, ▒▒▒▒</span>
+                            </span>
+                        </div>
+
+                        <!-- Rating Widget (Static) -->
+                        <div class="mt-4 flex items-center bg-black/50 p-2 rounded border border-gray-800 w-fit">
+                            <div class="text-yellow-600 mr-2 text-sm">
+                                <i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <span class="text-xs text-gray-400 font-bold">0.5 / 10</span>
+                        </div>
+                    </header>
+
+                    <!-- Story Text -->
+                    <div class="story-content text-gray-300 font-serif">
+                        
+                        <div class="mb-8">
+                            <p>im sorry. and i miss you. please responf thank you</p>
+                        </div>
+                    </div>
+
+                    <!-- Article Footer / Sharing -->
+                    <div class="border-t border-b border-gray-800 py-6 mt-12 mb-8">
+                        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                            <span class="text-sm font-bold uppercase tracking-widest text-gray-500">Share this Pasta:</span>
+                            <div class="flex items-center gap-2">
+                                <div class="flex border border-gray-700 bg-black">
+                                    <input type="text" value="https://cabbit.club/TOWNSEND/thepastacreependium/coming-clean.html" class="bg-transparent text-gray-500 text-xs px-3 py-2 w-48 md:w-64 focus:outline-none font-mono" readonly id="share-url">
+                                    <button onclick="copyToClipboard()" class="bg-gray-800 text-gray-400 px-3 border-l border-gray-700 hover:text-white hover:bg-creepy-red transition-colors" title="Copy Link">
+                                        <i class="fas fa-link"></i>
+                                    </button>
+                                </div>
+                                <span id="copy-msg" class="text-xs text-creepy-red font-bold opacity-0 transition-opacity duration-300">COPIED</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comments Section -->
+                    <div id="comments">
+                        <h3 class="text-xl font-bold text-white mb-6 border-l-4 border-creepy-red pl-3">
+                            3 COMMENTS
+                        </h3>
+
+                        <!-- Add Comment Form -->
+                        <div class="bg-creepy-dark border border-gray-800 p-6 mb-8 shadow-lg">
+                            <h4 class="text-md font-bold text-gray-400 mb-4">LEAVE A COMMENT</h4>
+                            <form onsubmit="event.preventDefault(); alert('Error: Connection to server lost.');">
+                                <div class="mb-4">
+                                    <input type="text" placeholder="Name (Optional)" class="w-full bg-black border border-gray-700 px-3 py-2 text-sm text-gray-300 focus:outline-none focus:border-creepy-red font-mono">
+                                </div>
+                                <div class="mb-4">
+                                    <textarea rows="4" placeholder="Join the discussion..." class="w-full bg-black border border-gray-700 px-3 py-2 text-sm text-gray-300 focus:outline-none focus:border-creepy-red font-mono"></textarea>
+                                </div>
+                                <button type="submit" class="bg-creepy-red text-white px-6 py-2 text-sm font-bold uppercase tracking-widest hover:bg-red-700 transition-colors">
+                                    Post Comment
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- Comment 1 -->
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-yellow-800 flex-shrink-0 border border-gray-700"></div>
+                                <div class="flex-1 bg-creepy-dark/50 p-3 border border-gray-800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm font-bold text-creepy-red">john cool</span>
+                                        <span class="text-xs text-gray-600 blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒ at ▒▒:▒▒ ▒▒</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">not scairy</p>
+                                </div>
+                            </div>
+
+                            <!-- Comment 2 -->
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-yellow-800 flex-shrink-0 border border-gray-700"></div>
+                                <div class="flex-1 bg-creepy-dark/50 p-3 border border-gray-800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm font-bold text-creepy-red">john cool</span>
+                                        <span class="text-xs text-gray-600 blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒ at ▒▒:▒▒ ▒▒</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">what</p>
+                                </div>
+                            </div>
+
+                            <!-- Comment 3 -->
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-black flex-shrink-0 border border-gray-700"></div>
+                                <div class="flex-1 bg-creepy-dark/50 p-3 border border-gray-800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-sm font-bold text-creepy-red">[DEACTIVATED ACCOUNT]</span>
+                                        <span class="text-xs text-gray-600 blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒ at ▒▒:▒▒ ▒▒</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">[COMMENT DELETED]</p>
+                                </div>
+                            </div>
+
+                            <!-- Pagination -->
+                            <div class="flex justify-center items-center py-6">
+                                <div class="flex space-x-1 items-center">
+                                    <span class="px-3 py-1 bg-creepy-red text-white text-xs font-bold">1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+            </main>
+
+            <!-- Right Column: Sidebar (Added to match reference) -->
+            <aside class="w-full lg:w-1/4 space-y-8">
+                
+                <!-- Search Widget -->
+                <div class="bg-creepy-dark border border-gray-800 p-4 shadow-lg">
+                    <h3 class="text-lg font-bold text-gray-400 border-b border-gray-700 pb-2 mb-3">SEARCH</h3>
+                    <div class="flex">
+                        <input type="text" placeholder="Search archives..." class="w-full bg-black border border-gray-700 px-3 py-2 text-sm text-gray-300 focus:outline-none focus:border-creepy-red">
+                        <button class="bg-gray-800 px-3 border border-l-0 border-gray-700 text-gray-400 hover:text-white hover:bg-creepy-red transition-colors">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Random Button -->
+                <div class="text-center">
+                    <button onclick="window.location.href='townsend.html'" class="w-full bg-creepy-red text-white py-3 font-bold uppercase tracking-widest hover:bg-red-700 border border-red-900 shadow-[0_0_10px_rgba(138,0,0,0.5)] transition-all transform hover:scale-105">
+                        <i class="fas fa-dice mr-2"></i> Random Pasta
+                    </button>
+                </div>
+
+                <!-- Ad Placeholder -->
+                <div class="w-full h-64 bg-black border border-gray-800 flex flex-col items-center justify-center text-center p-4 opacity-50 hover:opacity-100 transition-opacity">
+                    <span class="text-gray-600 text-xs tracking-widest mb-2">ADVERTISEMENT</span>
+                    <div class="text-creepy-red font-mono text-sm blink">
+                        KNOW YOUR RIGHTS. DON'T GET SCAMMED BY UNFAIR TRADES. POKEMON VALUES COM
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+
+        <footer class="mt-12 text-center text-xs text-gray-600 border-t border-gray-800 pt-8">
+            <p class="mb-2">
+                &copy; <span class="blur-[2px] select-none">▒▒▒▒-▒▒▒▒</span> The Pasta Creependium. All stories are fictional... usually.
+            </p>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-gray-400">Terms of Use</a>
+                <a href="#" class="hover:text-gray-400">Contact</a>
+            </div>
+            <br>
+            <a href="index.html" class="hover:text-gray-400">&laquo; Return to Homepage</a>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const copyText = document.getElementById("share-url");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+            document.execCommand("copy");
+            
+            const msg = document.getElementById('copy-msg');
+            msg.classList.remove('opacity-0');
+            setTimeout(() => {
+                msg.classList.add('opacity-0');
+            }, 2000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a');
+            // Allow home link and self links
+            const allowedHrefs = [
+                'index.html',
+                'townsend.html',
+                'discussion/townsend.html',
+                'user/giles_the_x.html'
+            ];
+
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && !allowedHrefs.includes(href)) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        alert("sorry, this link isn't working :(");
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
