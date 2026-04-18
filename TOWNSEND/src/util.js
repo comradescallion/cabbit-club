@@ -166,3 +166,39 @@ function clearStorage() {
     const townsendEntries = entries.filter(([key, value]) => key.startsWith('townsend-'));
     townsendEntries.forEach(([key, value]) => localStorage.removeItem(key));
 }
+
+class Pasta {
+    constructor(name, commentsNum) {
+        this.name = name;
+        this.commentsNum = commentsNum;
+        this.newComments = [];
+    }
+
+    get [Symbol.toStringTag]() {
+        return `${this.name}`;
+    }
+
+    addComment(username, content, color = "black") {
+        const comment = new Comment(username, content, color);
+        this.newComments.push(comment);
+    }
+}
+
+class Comment {
+    constructor(username, content, color) {
+        this.username = username;
+        this.content = content;
+        this.color = color;
+    }
+
+    get [Symbol.toStringTag]() {
+        return `Comment by ${this.username}`;
+    }
+}
+
+const interactablePastas = [
+    new Pasta("TOWNSEND", 284),
+    new Pasta("coming clean", 3)
+]
+
+// TODO: add localstorage functionality to this
