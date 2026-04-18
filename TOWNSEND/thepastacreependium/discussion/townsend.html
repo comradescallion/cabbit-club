@@ -437,7 +437,21 @@
             }
         };
 
+        // Load from url
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const commentKey = urlParams.get('comment');
+            if (commentKey && commentsData[commentKey]) {
+                openSidebar(commentKey);
+            }
+        });
+
         function openSidebar(key) {
+            // update url params
+            const urlParams = new URLSearchParams(window.location.search);
+            urlParams.set('comment', key);
+            window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
+
             const sidebar = document.getElementById('comment-sidebar');
             const backdrop = document.getElementById('backdrop');
             const contentDiv = document.getElementById('sidebar-content');
@@ -477,6 +491,11 @@
         }
 
         function closeSidebar() {
+            // update url params
+            const urlParams = new URLSearchParams(window.location.search);
+            urlParams.delete('comment');
+            window.history.replaceState({}, '', `${window.location.pathname}`);
+
             const sidebar = document.getElementById('comment-sidebar');
             const backdrop = document.getElementById('backdrop');
             
