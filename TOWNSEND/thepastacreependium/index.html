@@ -303,8 +303,23 @@
             </p>
         </footer>
     </div>
+
+    <div id="backdrop" class="fixed inset-0 bg-black/50 z-[90] backdrop-blur-sm hidden"></div>
+    <div id="popup" class="fixed inset-0 flex items-center justify-center z-[100] pointer-events-none hidden">
+        <div class="bg-creepy-dark border border-gray-800 p-6 w-11/12 md:w-1/2 lg:w-1/3 shadow-lg relative pointer-events-auto">
+            <button id="popup-close" class="absolute top-2 right-2 text-gray-500 hover:text-white">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="popup-content" class="text-gray-300 font-serif text-sm">
+            </div>
+        </div>
+    </div>
     
+    <script src="../src/util.js"></script>
     <script>
+
+        checkFirstTimeVisitor();
+
         // Function to handle the Mario image reveal
         function revealMario(container) {
             const img = document.createElement('img');
