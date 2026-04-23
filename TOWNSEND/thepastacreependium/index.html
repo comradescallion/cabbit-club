@@ -174,8 +174,8 @@
                     </div>
                 </article>
 
-                 <!-- Entry 5: MARIO.JPG -->
-                 <article class="bg-creepy-dark border border-gray-800 p-6 shadow-md hover:border-gray-700 transition-colors">
+                <!-- Entry 5: MARIO.JPG -->
+                <article class="bg-creepy-dark border border-gray-800 p-6 shadow-md hover:border-gray-700 transition-colors">
                     <h2 class="text-2xl font-serif text-link-red font-bold mb-2">
                         <a href="#" class="hover:text-red-400 no-underline hover:underline">MARIO.JPG</a>
                     </h2>
@@ -188,7 +188,7 @@
                     
                     <!-- Simulated "Shitty JPG" -->
                     <div class="bg-black p-1 inline-block border border-red-900 mb-4">
-                        <div id="mario-container" class="w-64 h-48 bg-gray-900 relative overflow-hidden flex items-center justify-center group cursor-pointer" onclick="revealMario(this)">
+                        <div id="mario-container" class="w-64 h-48 bg-gray-900 relative overflow-hidden flex items-center justify-center group cursor-pointer" onkeypress="revealMario(this)" onclick="revealMario(this)" tabindex="0">
                             <div class="absolute inset-0 bg-[url('https://placehold.co/400x300/300000/ff0000?text=MARIO.JPG')] bg-cover opacity-50 group-hover:opacity-80 transition-opacity duration-75"></div>
                             <!-- Glitch effect overlay -->
                             <div class="absolute inset-0 bg-red-900 mix-blend-overlay opacity-20"></div>

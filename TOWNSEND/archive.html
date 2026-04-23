@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandria's Folly - Cataloging the Net!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></link>
+</head>
+<body>
+    
+
+
+    <script>
+        const validSites = ["thepastacreependium.org", "thepastacreependium.org/index", "thepastacreependium.org/townsend", "thepastacreependium.org/coming-clean", "thepastacreependium.org/discussion/townsend", "thepastacreependium.org/user/giles_the_x", "thepastacreependium.org/user/john cool"]
+
+        // read urlparams
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const link = urlParams.get('');
+            if (link && validSites.includes(link.toLowerCase().replace(".html", ""))) {
+                document.title = "Redirecting to " + "thepastacreependium" + link.replace('thepastacreependium.org', '') + "..."
+                window.location.href = "thepastacreependium" + link.replace('thepastacreependium.org', '')
+            }
+            else {
+                pageNotArchived(link)
+            }
+        });
+
+        function pageNotArchived(link) {
+            print("heh. whatsup")
+        }
+    </script>
+</body>
+</html>
