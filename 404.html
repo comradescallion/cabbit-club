@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>not found</title>
+    <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
     <div id="dynamic-404">
@@ -16,8 +17,11 @@
         var currentPath = window.location.pathname;
         var container = document.getElementById("dynamic-404");
 
-        if (currentPath.startsWith("/townsend/")) {
-            window.location.href = "/TOWNSEND/" + currentPath.substring("/townsend/".length);
+        if (currentPath.startsWith("/TOWNSEND/thepastacreependium/")) {
+            window.location.href = "/TOWNSEND/alexandriasfolly/archive?=thepastacreependium.org/" + currentPath.substring("/TOWNSEND/thepastacreependium/".length);
+        }
+        else if (currentPath.toLowerCase().startsWith("/townsend")) {
+            window.location.href = "/TOWNSEND" + currentPath.substring("/townsend".length);
         }
     </script>
 </body>
