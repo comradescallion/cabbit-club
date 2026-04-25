@@ -20,7 +20,7 @@
         if (currentPath.startsWith("/TOWNSEND/thepastacreependium/")) {
             window.location.href = "/TOWNSEND/alexandriasfolly/archive?=thepastacreependium.org/" + currentPath.substring("/TOWNSEND/thepastacreependium/".length);
         }
-        else if (!(currentPath == "/TOWNSEND") && currentPath.toLowerCase().startsWith("/townsend")) {
+        else if (!currentPath.startsWith("/TOWNSEND") && currentPath.toLowerCase().startsWith("/townsend")) {
             window.location.href = "/TOWNSEND" + currentPath.substring("/townsend".length);
         }
     </script>
