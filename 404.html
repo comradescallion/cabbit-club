@@ -4,21 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>not found</title>
-    <link href="/css/style.css" rel="stylesheet">
+    <link id="thestylesheet" href="/css/style.css" rel="stylesheet">
 </head>
 <body>
     <div id="dynamic-404">
-        <h1>404 - Page Not Found</h1>
-        <p>Sorry, the page you are looking for does not exist.</p>
-        <a href="/">Go back home</a>
+        <h1>404 - no dice :/</h1>
+        <p>sry!!!! no carrots found at the url :/ cabbit dissapointment</p>
+        <a href="/">return to cabbitworld</a>
     </div>
 
     <script>
         var currentPath = window.location.pathname;
         var container = document.getElementById("dynamic-404");
+        var stylesheet = document.getElementById("thestylesheet");
 
         if (currentPath.startsWith("/TOWNSEND/thepastacreependium/")) {
             window.location.href = "/TOWNSEND/alexandriasfolly/archive?=thepastacreependium.org/" + currentPath.substring("/TOWNSEND/thepastacreependium/".length);
+        }
+        else if (currentPath.startsWith("/TOWNSEND/alexandriasfolly/")) {
+            window.location.href = "/TOWNSEND/alexandriasfolly/";
+        }
+        else if (currentPath.startsWith("/TOWNSEND/")) {
+            stylesheet.href = "";
+            container.innerHTML = `
+                <h1>What are you looking for?</h1>
+                <p>this is does not exist in the world of TOWNSEND.</p>
+                <a href="/TOWNSEND/">return</a>
+            `
         }
         else if (!currentPath.startsWith("/TOWNSEND") && currentPath.toLowerCase().startsWith("/townsend")) {
             window.location.href = "/TOWNSEND" + currentPath.substring("/townsend".length);
