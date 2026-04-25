@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unable to Save Page - Alexandria's Folly</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --warm-black: #110e0c;
+            --parchment: #f4f1ea;
+            --parchment-light: #fcfbf8;
+            --rust-red: #93301d;
+            --warm-gray: #dcd7cc;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--parchment);
+            color: var(--warm-black);
+            background-image: url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100" height="100" filter="url(%23noise)" opacity="0.04"/%3E%3C/svg%3E');
+        }
+
+        /* Site Header */
+        header {
+            background-color: var(--warm-black);
+            border-bottom: 6px solid var(--rust-red);
+        }
+
+        .archive-logo {
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 1px;
+            color: var(--parchment-light);
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--warm-gray);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* Search Input */
+        #archive-form {
+            border: 3px solid var(--warm-black);
+            background-color: var(--parchment-light);
+            box-shadow: 4px 4px 0px var(--warm-black);
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        
+        #archive-form:focus-within {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px var(--warm-black);
+        }
+
+        #archive-form input[type="text"] {
+            background-color: transparent;
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--warm-black);
+            font-weight: bold;
+        }
+
+        #archive-form input[type="text"]:focus {
+            outline: none;
+            background-color: #ffffff;
+        }
+
+        #archive-form button {
+            background-color: var(--warm-black);
+            color: var(--parchment-light);
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            border-left: 3px solid var(--warm-black);
+            margin-right: 2px;
+        }
+
+        #archive-form button:hover {
+            background-color: var(--rust-red);
+            color: #ffffff;
+        }
+
+        /* Main Content Container */
+        .content-card {
+            background: var(--parchment-light);
+            border: 4px solid var(--warm-black);
+            box-shadow: 8px 8px 0px var(--warm-black);
+        }
+        
+        .url-highlight {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--warm-gray);
+            padding: 4px 8px;
+            color: var(--warm-black);
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .btn-archive {
+            background-color: var(--parchment-light);
+            border: 3px solid var(--warm-black);
+            color: var(--warm-black);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            box-shadow: 4px 4px 0px var(--warm-black);
+            transition: all 0.1s ease;
+        }
+        
+        .btn-archive:hover {
+            background-color: var(--warm-black);
+            color: var(--parchment-light);
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px var(--warm-black);
+        }
+        
+        .section-header {
+            background-color: var(--warm-black);
+            color: var(--parchment-light);
+            padding: 6px 12px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            display: inline-block;
+            border: 2px solid var(--warm-black);
+        }
+
+        .data-box {
+            border: 3px solid var(--warm-black);
+            background-color: var(--parchment);
+            padding: 20px;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    
+    <!-- Header / Navigation -->
+    <header class="w-full z-50">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <!-- Logo -->
+            <a href="../alexandriasfolly/" class="flex items-center group decoration-transparent">
+                <div class="text-[#fcfbf8] mr-4 text-4xl">
+                    <i class="fas fa-server"></i>
+                </div>
+                <div class="leading-tight">
+                    <div class="font-bold archive-logo text-3xl leading-none mb-2">Alexandria's Folly</div>
+                    <div class="tagline">Cataloging the Net!</div>
+                </div>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="flex-1 w-full max-w-2xl">
+                <form id="archive-form" class="flex items-center w-full rounded-none">
+                    <div class="bg-[#dcd7cc] text-[#110e0c] px-4 py-3 border-r-3 border-[#110e0c]">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <input type="text" id="wb-url" class="w-full px-4 py-3 text-base" placeholder="Enter URL query...">
+                    <button type="submit" class="px-8 py-3 text-sm tracking-wider whitespace-nowrap transition-colors">Search!</button>
+                </form>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 w-full max-w-4xl mx-auto px-4 py-12">
+        
+        <div class="content-card w-full p-10 rounded-none">
+            
+            <!-- Error Header -->
+            <div class="border-b-4 border-[#110e0c] pb-8 mb-8 flex items-start">
+                <div class="text-6xl text-[#8a0000] mr-6">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+                <div>
+                    <h1 class="text-4xl font-bold font-serif text-[#110e0c] mb-2 tracking-tight">SOMETHING IS AMISS</h1>
+                    <p class="text-xl text-[#110e0c] font-bold">Looks like there's nothing left.</p>
+                </div>
+            </div>
+
+            <!-- Details Section -->
+            <div class="data-box">
+                <p class="text-sm font-bold text-[#110e0c] mb-3 tracking-widest">The page <span class="url-highlight" id="error-url-display">blanknar</span> could not be accessed, because there was nothing to access.</p>
+                <p class="text-sm font-bold text-[#8a0000]" id="error-reason">
+                    Next time, be a little quicker.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-[#110e0c] text-[#dcd7cc] py-6 text-center text-sm uppercase tracking-widest font-mono mt-auto">
+        <p>&copy; 2026 Alexandria's Folly</p>
+    </footer>
+
+
+    <script>
+        // read urlparams
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const link = urlParams.get('');
+            const trimmedLink = link.toLowerCase().replace(".html", "")
+            pageNotArchived(trimmedLink)
+        });
+
+        function pageNotArchived(link) {
+            const urlInput = document.getElementById('wb-url');
+            const errorUrlDisplay = document.getElementById('error-url-display');
+
+            if(link.trim() !== '') {
+                // Prevent XSS
+                const safeUrl = link.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                urlInput.value = safeUrl
+                errorUrlDisplay.textContent = safeUrl;
+            }
+        }
+
+        // Update the error text dynamically based on the search bar
+        document.getElementById('archive-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const urlInput = document.getElementById('wb-url').value;
+
+            if(urlInput.trim() !== '') {
+                // Prevent XSS
+                let safeUrl = urlInput.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace("https://", '').replace("http://", '').replace("www.", '');
+                if (safeUrl.endsWith("/")) {
+                    safeUrl = safeUrl.slice(0, -1);
+                }
+
+                window.location.href = "archive.html?=" + safeUrl;
+            }
+        });
+    </script>
+</body>
+</html>

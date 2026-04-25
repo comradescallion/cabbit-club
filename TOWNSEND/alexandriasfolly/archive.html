@@ -136,6 +136,22 @@
             background-color: var(--parchment);
             padding: 20px;
         }
+
+        /* Loading Animation */
+        @keyframes dot-pulse {
+            0%, 100% { 
+                transform: translate(-50%, -50%) scale(0.2); 
+                opacity: 0.2; 
+            }
+            50% { 
+                transform: translate(-50%, -50%) scale(1); 
+                opacity: 1; 
+            }
+        }
+        
+        .animate-dot-pulse {
+            animation: dot-pulse 1.2s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -173,48 +189,95 @@
     <main class="flex-1 w-full max-w-4xl mx-auto px-4 py-12">
         
         <div class="content-card w-full p-10 rounded-none">
-            
-            <!-- Error Header -->
-            <div class="border-b-4 border-[#110e0c] pb-8 mb-8 flex items-start">
-                <div class="text-6xl text-[#8a0000] mr-6">
-                    <i class="fas fa-exclamation-triangle"></i>
+            <div id="cant-find" style="display: none;">
+                <!-- Error Header -->
+                <div class="border-b-4 border-[#110e0c] pb-8 mb-8 flex items-start">
+                    <div class="text-6xl text-[#8a0000] mr-6">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-4xl font-bold font-serif text-[#110e0c] mb-2 tracking-tight">PAGE NOT ARCHIVED</h1>
+                        <p class="text-xl text-[#110e0c] font-bold">The requested URL is not present in the current database index.</p>
+                    </div>
                 </div>
+
+                <!-- Details Section -->
+                <div class="mb-10">
+                    <div class="data-box mb-8">
+                        <p class="text-sm font-bold text-[#110e0c] mb-3 tracking-widest">The page <span class="error-url-display url-highlight">blanknar</span> could not be accessed:</p>
+                        <p class="text-sm font-bold text-[#8a0000]" id="error-reason">
+                            URL not found or invalid.
+                        </p>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex flex-col sm:flex-row gap-6 w-full">
+                        <button class="btn-archive py-3 px-8 rounded-none w-full text-center bg-[#8a0000] text-[#fcfbf8]" id="save-button">
+                            <i class="fas fa-download mr-2"></i> Archive Page!
+                        </button>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
                 <div>
-                    <h1 class="text-4xl font-bold font-serif text-[#110e0c] mb-2 tracking-tight">PAGE NOT ARCHIVED</h1>
-                    <p class="text-xl text-[#110e0c] font-bold">The requested URL is not present in the current database index.</p>
+                    <div class="section-header">Common Causes for Retrieval Failure</div>
+                    <div class="border-3 border-[#110e0c] p-6 bg-[#dcd7cc] text-base text-[#110e0c] font-medium font-serif leading-relaxed">
+                        <ul class="list-disc pl-6 space-y-3">
+                            <li>The target domain's <span class="font-mono bg-[#fcfbf8] px-2 py-0.5 border-2 border-[#110e0c] font-bold">robots.txt</span> directive prohibited archival crawlers.</li>
+                            <li>The site administrator filed a formal exclusion request with Alexandria's Folly.</li>
+                            <li>The URL contains a syntax error or typographical mistake.</li>
+                            <li>The specified resource has not yet been processed by the automated archival systems.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <!-- Details Section -->
-            <div class="mb-10">
-                <div class="data-box mb-8">
-                    <p class="text-sm font-bold text-[#110e0c] mb-3 tracking-widest">The page <span class="url-highlight" id="error-url-display">blanknar</span> could not be accessed:</p>
-                    <p class="text-sm font-bold text-[#8a0000]" id="error-reason">
-                        URL not found or invalid.
-                    </p>
-                </div>
-
-                <!-- Actions -->
-                <div class="flex flex-col sm:flex-row gap-6 w-full">
-                    <button class="btn-archive py-3 px-8 rounded-none w-full text-center bg-[#8a0000] text-[#fcfbf8]">
-                        <i class="fas fa-download mr-2"></i> Archive Page!
-                    </button>
-                </div>
-            </div>
-
-            <!-- FAQ Section -->
-            <div>
-                <div class="section-header">Common Causes for Retrieval Failure</div>
-                <div class="border-3 border-[#110e0c] p-6 bg-[#dcd7cc] text-base text-[#110e0c] font-medium font-serif leading-relaxed">
-                    <ul class="list-disc pl-6 space-y-3">
-                        <li>The target domain's <span class="font-mono bg-[#fcfbf8] px-2 py-0.5 border-2 border-[#110e0c] font-bold">robots.txt</span> directive prohibited archival crawlers.</li>
-                        <li>The site administrator filed a formal exclusion request with Alexandria's Folly.</li>
-                        <li>The URL contains a syntax error or typographical mistake.</li>
-                        <li>The specified resource has not yet been processed by the automated archival systems.</li>
-                    </ul>
+            <div id="loading">
+                <div class="flex items-start">
+                    <div class="mr-6 mt-4">
+                        <div class="relative w-12 h-12">
+                            <div class="absolute top-0 left-1/2 w-3 h-3 bg-gray-500 rounded-full animate-dot-pulse [animation-delay:0s]"></div>
+                            <div class="absolute top-[14.6%] left-[85.4%] w-3 h-3 bg-gray-500 rounded-full animate-dot-pulse [animation-delay:-1.05s]"></div>
+                            <div class="absolute top-1/2 left-full w-3 h-3 bg-gray-500 rounded-full animate-dot-pulse [animation-delay:-0.9s]"></div>
+                            <div class="absolute top-[85.4%] left-[85.4%] w-3 h-3 bg-gray-500 rounded-full animate-dot-pulse [animation-delay:-0.75s]"></div>
+                            <div class="absolute top-full left-1/2 w-3 h-3 bg-gray-500 rounded-full animate-dot-pulse [animation-delay:-0.6s]"></div>
+                            <div class="absolute top-[85.4%] left-[14.6%] w-3 h-3 bg-gray-500 rounded-full animate-dot-pulse [animation-delay:-0.45s]"></div>
+                            <div class="absolute top-1/2 left-0 w-3 h-3 bg-gray-500 rounded-full animate-dot-pulse [animation-delay:-0.3s]"></div>
+                            <div class="absolute top-[14.6%] left-[14.6%] w-3 h-3 bg-gray-500 rounded-full animate-dot-pulse [animation-delay:-0.15s]"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-4xl font-bold font-serif text-[#110e0c] mb-2 tracking-tight">SEARCHING...</h1>
+                        <p class="text-xl text-[#110e0c] font-bold">Loading page <span class="error-url-display url-highlight">blanknar</span>...</p>
+                    </div>
                 </div>
             </div>
 
+            <div id="blankurl" style="display: none;">
+                <div class="flex items-start">
+                    <div class="text-6xl text-[#8a0000] mr-6">
+                        <i class="fa-solid fa-anchor"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-4xl font-bold font-serif text-[#110e0c] mb-2 tracking-tight">Hey.</h1>
+                        <p class="text-xl text-[#110e0c] font-bold">Enter a <span class="url-highlight">URL</span>, dippy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="easteregg" style="display: none;">
+            
+                <!-- Error Header -->
+                <div class="flex items-start">
+                    <div class="text-6xl text-[#8a0000] mr-6">
+                        <i class="fa-solid fa-exclamation-triangle"></i>
+                    </div>
+                    <div>
+                        <h1 id="ee-title" class="text-4xl font-bold font-serif text-[#110e0c] mb-2 tracking-tight"></h1>
+                        <p id="ee-message" class="text-xl text-[#110e0c] font-bold"></p>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </main>
@@ -227,34 +290,83 @@
 
     <script>
         const validSites = ["thepastacreependium.org", "thepastacreependium.org/index", "thepastacreependium.org/townsend", "thepastacreependium.org/coming-clean", "thepastacreependium.org/discussion/townsend", "thepastacreependium.org/user/giles_the_x", "thepastacreependium.org/user/john cool"]
+        const errorUrlDisplay = document.querySelectorAll('.error-url-display');
+        const urlInput = document.getElementById('wb-url');
+        const easterEggs = new Map([
+            ["blanknar", ["ERROR", "INFRASTRUCTURE TERM", false]],
+            ["gaster", ["", "", ".."]],
+            ["alexandriasfolly.org", ["TOO META", "cut that out :/", false]],
+            ["alexandriasfolly.org/index", ["TOO META", "cut that out :/", false]],
+            ["alexandriasfolly.org/save", ["TOO META", "cut that out :/", false]],
+            ["alexandriasfolly.org/archive", ["TOO META", "cut that out :/", false]],
+            ["alexandriasfolly.org/date", ["INTERESTING", "Clever, you are. But this isn't ready yet.", false]],
+            ["cabbit.club", ["WHAT THAT IS", "thats not canon i dont think", false]],
+            ["cabbit.club/townsend/alexandriasfolly/archive", ["WHAT THAT IS", "thats not canon i dont think", false]],
+            ["cabbit.club/townsend/alexandriasfolly", ["WHAT THAT IS", "thats not canon i dont think", false]],
+            ["cabbit.club/townsend/alexandriasfolly/index", ["WHAT THAT IS", "thats not canon i dont think", false]],
+            ["cabbit.club/townsend/", ["WHAT THAT IS", "thats not canon i dont think", false]],
+            ["cabbit.club/townsend/thepastacreependium", ["WHAT THAT IS", "thats not canon i dont think", false]]
+        ]);
 
         // read urlparams
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const link = urlParams.get('');
-            const trimmedLink = link.toLowerCase().replace(".html", "")
-            if (link && validSites.includes(trimmedLink)) {
-                document.title = "Redirecting to " + "thepastacreependium" + link.replace('thepastacreependium.org', '') + "..."
-                window.location.href = "../thepastacreependium" + link.replace('thepastacreependium.org', '')
+            const trimmedLink = link?.toLowerCase().replace(".html", "")
+            urlInput.value = trimmedLink?.trim() ? trimmedLink : "";
+
+            if (easterEggs.has(trimmedLink)) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('easteregg').style.display = 'block';
+
+                const [title, message, redirect] = easterEggs.get(trimmedLink);
+                document.getElementById('ee-title').textContent = title;
+                document.getElementById('ee-message').textContent = message;
+                if (redirect) {
+                    window.location.href = redirect;
+                }
+            }
+            else if(trimmedLink?.trim() !== '' && link != null) {
+                // Prevent XSS
+                const safeUrl = link.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+                errorUrlDisplay.forEach(el => {
+                    el.textContent = safeUrl;
+                });
+
+                if (trimmedLink && validSites.includes(trimmedLink)) {
+                    document.title = "Redirecting to " + "thepastacreependium" + link.replace('thepastacreependium.org', '') + "..."
+                    window.location.href = "../thepastacreependium" + link.replace('thepastacreependium.org', '')
+                }
+                else {
+                    pageNotArchived(trimmedLink)
+                }
             }
             else {
-                pageNotArchived(trimmedLink)
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('blankurl').style.display = 'block';
             }
         });
 
         function pageNotArchived(link) {
-            const urlInput = document.getElementById('wb-url');
-            const errorUrlDisplay = document.getElementById('error-url-display');
+            const cantFindSection = document.getElementById('cant-find');
+            const loadingSection = document.getElementById('loading');
+
+            document.title = "Page Not Archived - Alexandria's Folly";
 
             if(link.trim() !== '') {
                 // Prevent XSS
                 const safeUrl = link.replace(/</g, "&lt;").replace(/>/g, "&gt;");
                 urlInput.value = safeUrl
-                errorUrlDisplay.textContent = safeUrl;
+
+
+                errorUrlDisplay.forEach(el => {
+                    el.textContent = safeUrl;
+                });
             }
 
-            
-            errorUrlDisplay
+            loadingSection.style.display = 'none';
+            cantFindSection.style.display = 'block';
         }
 
         // Update the error text dynamically based on the search bar
@@ -271,6 +383,23 @@
                 }
 
                 window.location.href = "archive.html?=" + safeUrl;
+            }
+        });
+
+        // save button
+        document.getElementById('save-button').addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const urlInputText = document.getElementById('wb-url').value;
+
+            if(urlInputText.trim() !== '') {
+                // Prevent XSS
+                let safeUrl = urlInputText .replace(/</g, "&lt;").replace(/>/g, "&gt;").replace("https://", '').replace("http://", '').replace("www.", '');
+                if (safeUrl.endsWith("/")) {
+                    safeUrl = safeUrl.slice(0, -1);
+                }
+
+                window.location.href = "save.html?=" + safeUrl;
             }
         });
     </script>

@@ -36,7 +36,7 @@ function checkFirstTimeVisitor() {
                                 document.querySelector('#popup-content p span')?.remove(); // Remove previous error if exists
                                 document.querySelector('#popup-content p').insertAdjacentHTML('beforeend', '<span class="text-red-500 mt-2 block">Please enter a valid username.</span>');
                             } else if (username.toLowerCase() === "gaster") {
-                                location.reload(); // funny funny
+                                window.location.href = "../"; // funny funny
                             } else if (!validateUsername(username).valid) {
                                 document.querySelector('#popup-content p span')?.remove(); // Remove previous error if exists
                                 document.querySelector('#popup-content p').insertAdjacentHTML('beforeend', `<span class="text-red-500 mt-2 block">${validateUsername(username).message}</span>`);
@@ -88,7 +88,7 @@ function checkIfHasUsername() {
                     document.querySelector('#popup-content p span')?.remove(); // Remove previous error if exists
                     document.querySelector('#popup-content p').insertAdjacentHTML('beforeend', '<span class="text-red-500 mt-2 block">Please enter a valid username.</span>');
                 } else if (username.toLowerCase() === "gaster") {
-                    location.reload(); // funny funny
+                    window.location.href = "../"; // funny funny
                 } else if (!validateUsername(username).valid) {
                     document.querySelector('#popup-content p span')?.remove(); // Remove previous error if exists
                     document.querySelector('#popup-content p').insertAdjacentHTML('beforeend', `<span class="text-red-500 mt-2 block">${validateUsername(username).message}</span>`);
