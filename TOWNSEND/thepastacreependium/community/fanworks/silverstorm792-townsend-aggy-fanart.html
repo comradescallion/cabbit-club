@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAI AGGY FANART!!!! - Community - The Pasta Creependium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'creepy-black': '#0a0a0a',
+                        'creepy-dark': '#1a1a1a',
+                        'creepy-red': '#8a0000',
+                        'creepy-text': '#cccccc',
+                        'link-red': '#ff3333',
+                        'forum-bg': '#141414',
+                        'forum-border': '#2a2a2a'
+                    },
+                    fontFamily: {
+                        'serif': ['Georgia', 'Times New Roman', 'serif'],
+                        'sans': ['Verdana', 'Arial', 'sans-serif'],
+                        'mono': ['Courier New', 'monospace']
+                    },
+                    backgroundImage: {
+                        'noise': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.05%22/%3E%3C/svg%3E')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #ccc;
+        }
+        ::-webkit-scrollbar {
+            width: 12px;
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #550000;
+            border: 1px solid #000;
+        }
+        a {
+            color: #ff3333;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .crt-overlay {
+            pointer-events: none;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+            opacity: 0.15;
+        }
+        /* Forum-specific styles */
+        .forum-post {
+            border: 1px solid var(--forum-border);
+            margin-bottom: 15px;
+            background-color: var(--forum-bg);
+        }
+        .forum-user-panel {
+            background-color: #0d0d0d;
+            border-right: 1px solid #2a2a2a;
+            padding: 15px;
+            width: 180px;
+            flex-shrink: 0;
+            text-align: center;
+        }
+        .forum-content-panel {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .user-avatar {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 10px;
+            border: 1px solid #333;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .forum-signature {
+            border-top: 1px dashed #333;
+            margin-top: 15px;
+            padding-top: 10px;
+            font-size: 0.75rem;
+            color: #666;
+        }
+        .da-stats-box {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 3px;
+        }
+        /* Emulating a missing/broken image that users would pretend to see, or a stylized placeholder */
+        .art-canvas {
+            width: fit-content;
+            max-width: 100%;
+            height: fit-content;
+            margin: 1rem;
+            background: #000;
+            border: 4px solid #222;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .art-canvas img {
+            z-index: 60;
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen bg-creepy-black bg-noise relative text-gray-300">
+    <div class="crt-overlay"></div>
+
+    <!-- Header / Nav -->
+    <header class="bg-creepy-dark border-b border-creepy-red/30 py-4 mb-6">
+        <div class="container mx-auto max-w-6xl px-4 flex justify-between items-center">
+            <a href="../../" class="text-2xl font-serif font-bold text-creepy-red tracking-tight hover:text-white transition-colors">
+                THE PASTA <span class="text-white">CREEPENDIUM</span>
+            </a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6 text-sm font-bold uppercase tracking-widest text-gray-500">
+                    <li><a href="../../" class="hover:text-creepy-red">Home</a></li>
+                    <li><a href="../../townsend.html" class="hover:text-creepy-red">Stories</a></li>
+                    <li><a href="../../community/" class="hover:text-creepy-red text-white">Community</a></li>
+                    <li><a href="../../submit.html" class="hover:text-creepy-red">Submit</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mx-auto max-w-6xl px-4 pb-12">
+        
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- Left Column: Main Content -->
+            <main class="w-full lg:w-3/4">
+
+                <!-- Breadcrumbs -->
+                <div class="text-xs text-gray-500 mb-4 font-sans uppercase tracking-wider">
+                    <a href="../../">Home</a> &raquo; 
+                    <a href="../../community/">Community Boards</a> &raquo; 
+                    <a href="../../community/fanworks/">Fanworks Gallery</a> &raquo; 
+                    <span class="text-white">TOWNSEND - Aggy Fanart!!!</span>
+                </div>
+
+                <!-- ORIGINAL POST (Forum Thread Style) -->
+                <div class="forum-post flex flex-col md:flex-row mb-8 border-2 border-gray-700 shadow-lg relative">
+
+                    <div class="forum-user-panel bg-[#0a0a0a] pt-8">
+                        <div class="font-bold text-link-red text-sm mb-1 break-words">Silverstorm792</div>
+                        <div class="text-[10px] text-blue-400 mb-2 uppercase">Artist</div>
+                        <div class="user-avatar bg-slate-700 border-gray-700 text-slate-900">S</div>
+                        <div class="text-[10px] text-gray-600 mt-2 text-left space-y-1">
+                            <div>Joined: <span class="blur-[1px]">▒▒▒ ▒▒▒▒</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="forum-content-panel bg-creepy-dark/80 pt-6">
+                        <div>
+                            <h1 class="text-2xl font-bold font-serif text-white mb-2">TOWNSEND - Aggy Fanart!!!</h1>
+                            <div class="text-xs text-gray-500 mb-4 pb-2 border-b border-gray-800">
+                                Posted: <span class="blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒</span>
+                            </div>
+
+                            <div class="text-sm text-gray-300 font-sans space-y-3 leading-relaxed mb-6">
+                                <p>Fan art of the character Aglaope (better known as Aggy) from one of my favorite stories, Townsend. I’ve always thought her design was amazing, especially the intestine chains (sorry I’m kinda weird for that XD)</p>
+                                
+                                <!-- The Artwork Placeholder integrated into text -->
+                                <div class="art-canvas">
+                                    <img src="../media/silverstorm792-aggy.jpg">
+                                </div>
+
+                                <p>I know Giles x Wallace is the big ship right now but honestly... Giles x Aggy kinda has my heart. She can fix him (or eat him idk!!)</p>
+                                <p class="text-creepy-red font-bold">Don't steal or recolor my art please!!! If you use it in a video credit me!!</p>
+                                
+                                <div class="mt-6 pt-4 border-t border-dashed border-gray-800 text-xs text-gray-500">
+                                    <p><strong>Tools:</strong> MS Paint ^_^</p>
+                                    <p><strong>Time:</strong> like an hour idk</p>
+                                    <p><strong>Listening to:</strong> Muse - The Resistance</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post Footer / Stats -->
+                        <div class="mt-4">
+                            <div class="da-stats-box flex flex-wrap justify-between items-center py-2 px-3 text-xs text-gray-400 font-bold uppercase tracking-widest mb-3">
+                                <div class="flex gap-3 md:gap-4">
+                                    <span class="hover:text-white cursor-pointer"><i class="fas fa-star text-yellow-600 mr-1"></i> 315 Favs</span>
+                                    <span class="hover:text-white cursor-pointer"><i class="fas fa-comment text-creepy-red mr-1"></i> 42 Comments</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Action Buttons -->
+                            <div class="flex gap-2 mb-4">
+                                <button onclick="alert('You must be logged in to favorite this post.')" class="bg-gray-900 hover:bg-gray-800 text-gray-300 text-[10px] md:text-xs font-bold px-3 py-1.5 border border-gray-700 transition-colors flex items-center shadow-sm">
+                                    <i class="fas fa-star text-yellow-600 mr-1.5"></i> Add to Favorites
+                                </button>
+                                <button onclick="alert('You must be logged in to reply.')" class="bg-gray-900 hover:bg-gray-800 text-gray-300 text-[10px] md:text-xs font-bold px-3 py-1.5 border border-gray-700 transition-colors flex items-center shadow-sm">
+                                    <i class="fas fa-reply mr-1.5 text-creepy-red"></i> Reply
+                                </button>
+                                <button class="bg-gray-900 hover:bg-gray-800 text-gray-300 text-[10px] md:text-xs font-bold px-3 py-1.5 border border-gray-700 transition-colors flex items-center shadow-sm">
+                                    <i class="fas fa-share mr-1.5 text-blue-400"></i> Share
+                                </button>
+                            </div>
+                            
+                            <div class="forum-signature border-t border-dashed border-gray-800 pt-3">
+                                ~*~ <em>you can't stop me...</em> ~*~<br>
+                                Commissions: <strong>OPEN</strong> | Requests: <strong>CLOSED</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FORUM COMMENTS SECTION -->
+                <div class="mb-4 flex justify-between items-end">
+                    <h2 class="text-xl font-bold font-serif text-white">Comments</h2>
+                    <a href="#" class="bg-gray-800 hover:bg-gray-700 text-gray-400 opacity-50 cursor-not-allowed text-xs font-bold px-3 py-1 border border-gray-600 transition-colors" title="This thread is locked">Locked</a>
+                </div>
+
+                <div class="space-y-4">
+                    
+                    <!-- Comment 1: luvin_deth -->
+                    <div class="forum-post flex flex-col md:flex-row">
+                        <div class="forum-user-panel">
+                            <div class="font-bold text-link-red text-sm mb-1 break-words"><a href="../../user/luvin_deth.html" class="text-link-red hover:underline">luvin_deth</a></div>
+                            <div class="text-[10px] text-gray-500 mb-2 uppercase">Pasta Addict</div>
+                            <div class="user-avatar bg-pink-600 border-gray-700 text-pink-900">L</div>
+                            <div class="text-[10px] text-gray-600 mt-2 text-left space-y-1">
+                                <div>Joined: <span class="blur-[1px]">▒▒▒ ▒▒▒▒</span></div>
+                            </div>
+                        </div>
+                        <div class="forum-content-panel">
+                            <div>
+                                <div class="text-xs text-gray-500 mb-3 pb-2 border-b border-gray-800">
+                                    Posted: <span class="blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒</span>
+                                </div>
+                                <div class="text-sm text-gray-300 font-sans">
+                                    OMGGGG this is SO GOOD!!! The intestines r so gross (in a good way lol). Aggy is definitely best girl.
+                                </div>
+                            </div>
+                            <div class="forum-signature">
+                                ✝ <em>"Normal people scare me."</em> ✝<br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment 2: theXkillXmasterX9000
+                    <div class="forum-post flex flex-col md:flex-row">
+                        <div class="forum-user-panel">
+                            <div class="font-bold text-gray-300 text-sm mb-1 break-words">theXkillXmasterX9000</div>
+                            <div class="text-[10px] text-gray-500 mb-2 uppercase">Veteran</div>
+                            <div class="user-avatar bg-purple-900 border-gray-700 text-purple-950">XK</div>
+                            <div class="text-[10px] text-gray-600 mt-2 text-left space-y-1">
+                                <div>Joined: <span class="blur-[1px]">▒▒▒ ▒▒▒▒</span></div>
+                            </div>
+                        </div>
+                        <div class="forum-content-panel">
+                            <div>
+                                <div class="text-xs text-gray-500 mb-3 pb-2 border-b border-gray-800">
+                                    Posted: <span class="blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒</span>
+                                </div>
+                                <div class="text-sm text-gray-300 font-sans">
+                                    The art is technically good, but this is completely non-canon. The original Townsend report never mentioned a woman with "intestine chains", and it certainly never named her Aglaope. The rewrite ruined the ambiguity of the town. You're just drawing an OC at this point.
+                                </div>
+                            </div>
+                            <div class="forum-signature">
+                                <em>The shadows conceal the truth.</em>
+                            </div>
+                        </div>
+                    </div>
+
+                     Comment 3: Giles_the_X 
+                    <div class="forum-post flex flex-col md:flex-row">
+                        <div class="forum-user-panel">
+                            <div class="font-bold text-yellow-500 text-sm mb-1 break-words"><a href="../../user/giles_the_x.html" class="text-yellow-500 hover:text-yellow-300">Giles_the_X</a></div>
+                            <div class="text-[10px] bg-yellow-900/50 text-yellow-300 border border-yellow-700/50 inline-block px-1 mb-2 uppercase">Author</div>
+                            <div class="user-avatar bg-creepy-red border-yellow-600 text-red-950 font-serif">X</div>
+                            <div class="text-[10px] text-gray-600 mt-2 text-left space-y-1">
+                                <div>Joined: <span class="blur-[1px]">▒▒▒ ▒▒▒▒</span></div>
+                            </div>
+                        </div>
+                        <div class="forum-content-panel">
+                            <div>
+                                <div class="text-xs text-gray-500 mb-3 pb-2 border-b border-gray-800">
+                                    Posted: <span class="blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒</span>
+                                </div>
+                                <div class="text-sm text-gray-300 font-sans">
+                                    <div class="bg-black border border-gray-700 p-2 text-xs text-gray-500 mb-3 italic">
+                                        <strong>Quote from theXkillXmasterX9000:</strong><br>
+                                        The rewrite ruined the ambiguity of the town.
+                                    </div>
+                                    <p class="mb-3">My work expanded upon a dry, lifeless document. It added stakes and human psychology.</p>
+                                    <p>As for the artwork, <a href="#" class="text-link-red hover:underline">@Silverstorm792</a>... while I appreciate the dedication to my experience, I must note that her eyes were described as 'piercing', not literally bleeding. Furthermore, the name "Aggy" is a fan invention that diminishes the severe atmospheric dread I carefully crafted. I refer to her only as The Lady.</p>
+                                    <p>Still, adequate effort on the shading.</p>
+                                </div>
+                            </div>
+                            <div class="forum-signature">
+                                <em class="text-yellow-700">"I write horror that actually challenges the mind."</em>
+                            </div>
+                        </div>
+                    </div>
+                -->
+
+                    <!-- Comment 4: Silverstorm792 -->
+                    <div class="forum-post flex flex-col md:flex-row">
+                        <div class="forum-user-panel border-yellow-700/30">
+                            <div class="font-bold text-link-red text-sm mb-1 break-words"><a href="../../user/silverstorm792.html" class="text-link-red hover:underline">Silverstorm792</a></div>
+                            <div class="text-[10px] mb-2 uppercase bg-yellow-500 text-black rounded-sm">Artist</div>
+                            <div class="user-avatar bg-slate-700 border-yellow-500 text-slate-900">S</div>
+                            <div class="text-[10px] text-gray-600 mt-2 text-left space-y-1">
+                                <div>Joined: <span class="blur-[1px]">▒▒▒ ▒▒▒▒</span></div>
+                            </div>
+                        </div>
+                        <div class="forum-content-panel bg-yellow-900/10">
+                            <div>
+                                <div class="text-xs text-gray-500 mb-3 pb-2 border-b border-gray-800">
+                                    Posted: <span class="blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒</span>
+                                </div>
+                                <div class="text-sm text-gray-300 font-sans">
+                                    <div class="bg-black border border-gray-700 p-2 text-xs text-gray-500 mb-3 italic">
+                                        <strong>Quote from BlueGoose09:</strong><br>
+                                        eh, i'd do 'er *devilish smile*
+                                    </div>
+                                    bahahaha not the reaction I was expecting x'D<br><br>
+                                </div>
+                            </div>
+                            <div class="forum-signature">
+                                ~*~ <em>you can't stop me...</em> ~*~<br>
+                                Commissions: <strong>OPEN</strong> | Requests: <strong>CLOSED</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment 5: MiamiMike -->
+                    <div class="forum-post flex flex-col md:flex-row">
+                        <div class="forum-user-panel">
+                            <div class="font-bold text-gray-300 text-sm mb-1 break-words"><a href="../../user/bluegoose09.html" class="text-link-red hover:underline">BlueGoose09</a></div>
+                            <div class="text-[10px] text-gray-500 mb-2 uppercase">Member</div>
+                            <div class="user-avatar bg-blue-500 border-gray-700 text-gray-800">B</div>
+                            <div class="text-[10px] text-gray-600 mt-2 text-left space-y-1">
+                                <div>Joined: <span class="blur-[1px]">▒▒▒ ▒▒▒▒</span></div>
+                            </div>
+                        </div>
+                        <div class="forum-content-panel">
+                            <div>
+                                <div class="text-xs text-gray-500 mb-3 pb-2 border-b border-gray-800">
+                                    Posted: <span class="blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒</span>
+                                </div>
+                                <div class="text-sm text-gray-300 font-sans">
+                                    eh, i'd do 'er *devilish smile*
+                                </div>
+                            </div>
+                            <div class="forum-signature">
+                                Speak or forever rest in peace!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment 6: john cool -->
+                    <div class="forum-post flex flex-col md:flex-row">
+                        <div class="forum-user-panel">
+                            <div class="font-bold text-link-red text-sm mb-1 break-words"><a href="../../user/john cool.html" class="text-link-red hover:underline">john cool</a></div>
+                            <div class="text-[10px] text-gray-500 mb-2 uppercase">Author</div>
+                            <div class="user-avatar bg-yellow-800 border-gray-700"><span class="font-serif font-bold text-black opacity-80">john cool</span></div>
+                            <div class="text-[10px] text-gray-600 mt-2 text-left space-y-1">
+                                <div>Joined: <span class="blur-[1px]">▒▒▒ ▒▒▒▒</span></div>
+                            </div>
+                        </div>
+                        <div class="forum-content-panel">
+                            <div>
+                                <div class="text-xs text-gray-500 mb-3 pb-2 border-b border-gray-800">
+                                    Posted: <span class="blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒</span>
+                                </div>
+                                <div class="text-sm text-gray-300 font-sans">
+                                    mabe its okay she is scarie
+                                </div>
+                            </div>
+                            <div class="forum-signature">
+                                john i cannot say my last
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment 7: Admin_Mod -->
+                    <div class="forum-post flex flex-col md:flex-row border-blue-900">
+                        <div class="forum-user-panel border-blue-900">
+                            <div class="font-bold text-blue-400 text-sm mb-1 break-words"><a href="../../user/Admin_Dal.html" class="hover:underline">Admin_Dal</a></div>
+                            <div class="text-[10px] bg-blue-900/50 text-blue-300 border border-blue-700/50 inline-block px-1 mb-2 uppercase">Administrator</div>
+                            <div class="user-avatar bg-blue-950 border-blue-700 text-blue-900">
+                                <i class="fas fa-shield-alt text-4xl"></i>
+                            </div>
+                            <div class="text-[10px] text-gray-600 mt-2 text-left space-y-1">
+                                <div>Joined: <span class="blur-[1px]">▒▒▒ ▒▒▒▒</span></div>
+                            </div>
+                        </div>
+                        <div class="forum-content-panel bg-blue-900/10">
+                            <div>
+                                <div class="text-xs text-blue-400/50 mb-3 pb-2 border-b border-blue-900/50">
+                                    Posted: <span class="blur-[1px]">▒▒▒ ▒▒, ▒▒▒▒</span>
+                                </div>
+                                <div class="text-sm text-blue-100 font-sans">
+                                    <strong>USER MUTED.</strong><br><br>
+                                    Keep off-topic convention drama out of the Fanworks gallery. This board is for sharing art, not litigating personal grudges or debating site canon (take that to the Discussion boards).<br><br>
+                                    <a href="../../user/michael.html" class="text-link-red hover:underline">@michael</a> this is your final warning. Drop it.
+                                </div>
+                            </div>
+                            <div class="forum-signature text-blue-400/50">
+                                Site Administrator. Read the rules before posting.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Forum Pagination -->
+                <div class="flex justify-between items-center mt-6 bg-forum-bg border border-forum-border p-2">
+                    <div class="text-xs text-gray-500">Showing posts 1 to 5 of 42</div>
+                    <div class="flex space-x-1">
+                        <span class="px-2 py-1 bg-creepy-red text-white text-xs border border-red-900">1</span>
+                        <a href="#" class="px-2 py-1 bg-black text-gray-400 text-xs border border-gray-700 hover:bg-gray-800">2</a>
+                        <a href="#" class="px-2 py-1 bg-black text-gray-400 text-xs border border-gray-700 hover:bg-gray-800">3</a>
+                        <span class="px-1 text-gray-600">...</span>
+                        <a href="#" class="px-2 py-1 bg-black text-gray-400 text-xs border border-gray-700 hover:bg-gray-800">5</a>
+                        <a href="#" class="px-2 py-1 bg-black text-gray-400 text-xs border border-gray-700 hover:bg-gray-800">Next &raquo;</a>
+                    </div>
+                </div>
+
+            </main>
+
+            <!-- Right Column: Sidebar (Forum Navigation) -->
+            <aside class="w-full lg:w-1/4 space-y-5">
+
+                <!-- Search Widget -->
+                <div class="bg-creepy-dark border border-gray-800 shadow-lg">
+                    <h3 class="bg-[#111] text-xs font-bold text-gray-400 border-b border-gray-800 p-2 px-3 uppercase tracking-widest">Search Forums</h3>
+                    <div class="p-3">
+                        <div class="flex">
+                            <input type="text" placeholder="Search..." class="w-full bg-black border border-gray-700 px-2 py-1.5 text-xs text-gray-300 focus:outline-none focus:border-creepy-red">
+                            <button class="bg-gray-800 px-3 border border-l-0 border-gray-700 text-gray-400 hover:text-white hover:bg-creepy-red transition-colors">
+                                <i class="fas fa-search text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- New Threads -->
+                <div class="bg-creepy-dark border border-gray-800 shadow-lg">
+                    <h3 class="bg-[#111] text-xs font-bold text-creepy-red border-b border-gray-800 p-2 px-3 uppercase tracking-widest flex items-center">
+                        New Threads
+                    </h3>
+                    <ul class="p-3 space-y-3 font-sans">
+                        <li class="flex items-start gap-3">
+                            <a href="#" class="w-10 h-10 bg-black border border-gray-700 hover:border-creepy-red flex-shrink-0 flex items-center justify-center overflow-hidden group transition-colors shadow-inner">
+                                <i class="fas fa-gamepad text-lg text-gray-600 group-hover:text-creepy-red transition-colors"></i>
+                            </a>
+                            <div class="flex-1 min-w-0">
+                                <a href="#" class="font-bold text-gray-300 text-[11px] hover:text-white hover:underline block leading-tight line-clamp-2">
+                                    Has anyone seen this bird game??
+                                </a>
+                                <div class="text-[9px] text-gray-500 mt-0.5">by <a href="../../user/flim.html" class="text-link-red hover:underline">flim</a></div>
+                            </div>
+                        </li>
+                        <li class="border-t border-gray-800 pt-3 flex items-start gap-3">
+                            <a href="discussion-townsend.html" class="w-10 h-10 bg-black border border-gray-700 hover:border-creepy-red flex-shrink-0 flex items-center justify-center overflow-hidden group transition-colors shadow-inner">
+                                <i class="fas fa-comment-dots text-lg text-gray-600 group-hover:text-creepy-red transition-colors"></i>
+                            </a>
+                            <div class="flex-1 min-w-0">
+                                <a href="discussion-townsend.html" class="font-bold text-gray-300 text-[11px] hover:text-white hover:underline block leading-tight line-clamp-2">
+                                    how to post threads
+                                </a>
+                                <div class="text-[9px] text-gray-500 mt-0.5">by <a href="../../user/coda.html" class="text-link-red hover:underline">coda</a></div>
+                            </div>
+                        </li>
+                        <li class="border-t border-gray-800 pt-3 flex items-start gap-3">
+                            <a href="../../user/john cool.html" class="w-10 h-10 bg-black border border-gray-700 hover:border-creepy-red flex-shrink-0 flex items-center justify-center overflow-hidden group transition-colors shadow-inner">
+                                <i class="fas fa-hand-paper text-lg text-gray-600 group-hover:text-creepy-red transition-colors"></i>
+                            </a>
+                            <div class="flex-1 min-w-0">
+                                <a href="../../user/john cool.html" class="font-bold text-gray-300 text-[11px] hover:text-white hover:underline block leading-tight line-clamp-2">
+                                    hello i am john
+                                </a>
+                                <div class="text-[9px] text-gray-500 mt-0.5">by <a href="../../user/john cool.html" class="text-link-red hover:underline">john cool</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Threads from this Board (Fanworks Gallery) -->
+                <div class="bg-creepy-dark border border-gray-800 shadow-lg">
+                    <h3 class="bg-[#111] text-xs font-bold text-gray-400 border-b border-gray-800 p-2 px-3 uppercase tracking-widest flex justify-between items-center">
+                        <span>Fanworks Gallery</span>
+                        <a href="#" class="text-link-red hover:underline text-[10px] normal-case tracking-normal">View All</a>
+                    </h3>
+                    <ul class="p-3 space-y-3 font-sans">
+                        <li class="flex items-start gap-3">
+                            <a href="#" class="w-14 h-14 bg-black border border-gray-700 hover:border-creepy-red flex-shrink-0 flex items-center justify-center overflow-hidden group transition-colors shadow-inner">
+                                <i class="fas fa-camera-retro text-2xl text-gray-600 group-hover:text-creepy-red transition-colors"></i>
+                            </a>
+                            <div class="flex-1 min-w-0 pt-0.5">
+                                <a href="#" class="font-bold text-gray-300 text-xs hover:text-white hover:underline block leading-tight line-clamp-2">
+                                    SMILE.JPG (DO NOT LOOK)
+                                </a>
+                                <div class="text-[10px] text-gray-500 mt-1">by <a href="../../user/john cool.html" class="text-link-red hover:underline">john cool</a></div>
+                                <div class="text-[10px] text-gray-600 mt-0.5 flex gap-3 font-bold">
+                                    <span><i class="fas fa-comment text-gray-700 mr-0.5"></i> 0</span>
+                                    <span><i class="fas fa-eye text-gray-700 mr-0.5"></i> 0</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="border-t border-gray-800 pt-3 flex items-start gap-3">
+                            <a href="#" class="w-14 h-14 bg-black border border-gray-700 hover:border-creepy-red flex-shrink-0 flex items-center justify-center overflow-hidden group transition-colors shadow-inner">
+                                <i class="fas fa-paint-brush text-2xl text-gray-600 group-hover:text-creepy-red transition-colors"></i>
+                            </a>
+                            <div class="flex-1 min-w-0 pt-0.5">
+                                <a href="#" class="font-bold text-gray-300 text-xs hover:text-white hover:underline block leading-tight line-clamp-2">
+                                    My Panic! At The Disco AU art ;P
+                                </a>
+                                <div class="text-[10px] text-gray-500 mt-1">by <a href="../../user/xxphangirlxx.html" class="text-link-red hover:underline">xxphangirlxx</a></div>
+                                <div class="text-[10px] text-gray-600 mt-0.5 flex gap-3 font-bold">
+                                    <span><i class="fas fa-comment text-gray-700 mr-0.5"></i> 32</span>
+                                    <span><i class="fas fa-eye text-gray-700 mr-0.5"></i> 894</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="border-t border-gray-800 pt-3 flex items-start gap-3">
+                            <a href="#" class="w-14 h-14 bg-black border border-gray-700 hover:border-creepy-red flex-shrink-0 flex items-center justify-center overflow-hidden group transition-colors shadow-inner">
+                                <i class="fas fa-pen-nib text-2xl text-gray-600 group-hover:text-creepy-red transition-colors"></i>
+                            </a>
+                            <div class="flex-1 min-w-0 pt-0.5">
+                                <a href="#" class="font-bold text-gray-300 text-xs hover:text-white hover:underline block leading-tight line-clamp-2">
+                                    CORRUPTION. (Animal Jam Fanart)
+                                </a>
+                                <div class="text-[10px] text-gray-500 mt-1">by <a href="../../user/silverstorm792.html" class="text-link-red hover:underline">Silverstorn792</a></div>
+                                <div class="text-[10px] text-gray-600 mt-0.5 flex gap-3 font-bold">
+                                    <span><i class="fas fa-comment text-gray-700 mr-0.5"></i> 15</span>
+                                    <span><i class="fas fa-eye text-gray-700 mr-0.5"></i> 412</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="border-t border-gray-800 pt-3 flex items-start gap-3">
+                            <a href="#" class="w-14 h-14 bg-black border border-gray-700 hover:border-creepy-red flex-shrink-0 flex items-center justify-center overflow-hidden group transition-colors shadow-inner">
+                                <i class="fas fa-pencil-alt text-2xl text-gray-600 group-hover:text-creepy-red transition-colors"></i>
+                            </a>
+                            <div class="flex-1 min-w-0 pt-0.5">
+                                <a href="#" class="font-bold text-gray-300 text-xs hover:text-white hover:underline block leading-tight line-clamp-2">
+                                    The Creepster - Concept Art
+                                </a>
+                                <div class="text-[10px] text-gray-500 mt-1">by <a href="../../user/michael.html" class="text-link-red hover:underline">michael</a></div>
+                                <div class="text-[10px] text-gray-600 mt-0.5 flex gap-3 font-bold">
+                                    <span><i class="fas fa-comment text-gray-700 mr-0.5"></i> 56</span>
+                                    <span><i class="fas fa-eye text-gray-700 mr-0.5"></i> 1.2k</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Board Preview: Urban Legends -->
+                <div class="bg-creepy-dark border border-gray-800 shadow-sm opacity-90 hover:opacity-100 transition-opacity">
+                    <h3 class="bg-[#0f0f0f] text-[10px] font-bold text-gray-500 border-b border-gray-800 p-1.5 px-3 uppercase tracking-widest flex justify-between items-center">
+                        <span>Board: Urban Legends</span>
+                        <a href="#" class="text-gray-600 hover:text-white transition-colors" title="Go to board"><i class="fas fa-external-link-alt text-[9px]"></i></a>
+                    </h3>
+                    <div class="p-2">
+                        <div class="flex items-center gap-3">
+                            <a href="#" class="w-8 h-8 bg-black border border-gray-700 hover:border-creepy-red flex-shrink-0 flex items-center justify-center overflow-hidden group transition-colors shadow-inner">
+                                <i class="fas fa-eye text-sm text-gray-600 group-hover:text-creepy-red transition-colors"></i>
+                            </a>
+                            <div class="flex-1 min-w-0">
+                                <a href="#" class="font-bold text-link-red text-[10px] hover:text-white hover:underline block leading-tight truncate">
+                                    Is "The Peeker" actually Pennsylvanian?
+                                </a>
+                                <div class="text-[9px] text-gray-600 mt-0.5">Active 2 hrs ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Board Preview: Story Discussion -->
+                <div class="bg-creepy-dark border border-gray-800 shadow-sm opacity-90 hover:opacity-100 transition-opacity">
+                    <h3 class="bg-[#0f0f0f] text-[10px] font-bold text-gray-500 border-b border-gray-800 p-1.5 px-3 uppercase tracking-widest flex justify-between items-center">
+                        <span>Board: Story Discussion</span>
+                        <a href="#" class="text-gray-600 hover:text-white transition-colors" title="Go to board"><i class="fas fa-external-link-alt text-[9px]"></i></a>
+                    </h3>
+                    <div class="p-2">
+                        <div class="flex items-center gap-3">
+                            <a href="discussion-townsend.html" class="w-8 h-8 bg-black border border-gray-700 hover:border-creepy-red flex-shrink-0 flex items-center justify-center overflow-hidden group transition-colors shadow-inner">
+                                <i class="fas fa-book-dead text-sm text-gray-600 group-hover:text-creepy-red transition-colors"></i>
+                            </a>
+                            <div class="flex-1 min-w-0">
+                                <a href="discussion-townsend.html" class="font-bold text-link-red text-[10px] hover:text-white hover:underline block leading-tight truncate">
+                                    TOWNSEND - WALLACE IS THE AUTHOR (Theory)
+                                </a>
+                                <div class="text-[9px] text-gray-600 mt-0.5">Active 5 mins ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Board Preview: Off-Topic -->
+                <div class="bg-creepy-dark border border-gray-800 shadow-sm opacity-70 hover:opacity-100 transition-opacity">
+                    <h3 class="bg-[#0f0f0f] text-[10px] font-bold text-gray-500 border-b border-gray-800 p-1.5 px-3 uppercase tracking-widest flex justify-between items-center">
+                        <span>Board: Off-Topic</span>
+                        <a href="#" class="text-gray-600 hover:text-white transition-colors" title="Go to board"><i class="fas fa-external-link-alt text-[9px]"></i></a>
+                    </h3>
+                    <div class="p-2">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-black border border-gray-700 flex-shrink-0 flex items-center justify-center overflow-hidden shadow-inner cursor-not-allowed">
+                                <i class="fas fa-lock text-sm text-gray-600"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <span class="font-bold text-gray-400 text-[10px] line-through block leading-tight truncate" title="Thread Locked">
+                                    CreepCon Drama Megathread
+                                </span>
+                                <div class="text-[9px] text-gray-600 mt-0.5">Locked</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ad Placeholder -->
+                <div class="w-full h-64 bg-black border border-gray-800 flex flex-col items-center justify-center text-center p-4 opacity-50 hover:opacity-100 transition-opacity">
+                    <span class="text-gray-600 text-xs tracking-widest mb-2">ADVERTISEMENT</span>
+                    <div class="text-creepy-red font-mono text-sm blink">
+                        SUPPORT OUR HOSTING. PL0X
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+
+        <footer class="mt-12 text-center text-xs text-gray-600 border-t border-gray-800 pt-8">
+            <p class="mb-2">Copyright &copy; <span class="blur-[1px]">▒▒▒▒</span> The Pasta Creependium. All rights reserved.</p>
+            <a href="index.html" class="hover:text-gray-400">&laquo; Return to Homepage</a>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a');
+            // Allow home link and self links
+            const allowedHrefs = [
+                '../../',
+                '../../townsend.html',
+                '../../discussion/townsend.html',
+                '../../user/giles_the_x.html',
+                '../../user/john cool.html'
+            ];
+
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && !allowedHrefs.includes(href)) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        alert("sorry, this link isn't working :(");
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
