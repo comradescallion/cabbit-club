@@ -353,8 +353,11 @@
             ];
 
             links.forEach(link => {
-                // Check if it's not in the allowed list AND it's not the internal Mario click handler (which is a div, not an a tag, but good to be safe)
-                if (!allowedHrefs.includes(link.getAttribute('href'))) {
+                const href = link.getAttribute('href');
+                if (href && !allowedHrefs.includes(href)) {
+                    // Change the cursor to visually indicate the link is disabled
+                    link.style.cursor = 'not-allowed';
+                    
                     link.addEventListener('click', (e) => {
                         e.preventDefault();
                         alert("sorry, this link isn't working :(");

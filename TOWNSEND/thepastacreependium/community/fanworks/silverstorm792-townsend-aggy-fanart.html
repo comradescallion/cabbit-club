@@ -676,6 +676,9 @@
             links.forEach(link => {
                 const href = link.getAttribute('href');
                 if (href && !allowedHrefs.includes(href)) {
+                    // Change the cursor to visually indicate the link is disabled
+                    link.style.cursor = 'not-allowed';
+                    
                     link.addEventListener('click', (e) => {
                         e.preventDefault();
                         alert("sorry, this link isn't working :(");

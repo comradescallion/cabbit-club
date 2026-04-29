@@ -505,6 +505,32 @@
             sidebar.classList.add('translate-x-full');
             backdrop.classList.add('hidden');
         }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a');
+            // Allow specific links to function normally
+            const allowedHrefs = [
+                '..',
+                '../townsend.html',
+                'https://pastebin.com/mbRi23sb',
+                '../user/giles_the_x.html',
+                '../community/fanworks/silverstorm792-townsend-aggy-fanart.html'
+            ];
+
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && !allowedHrefs.includes(href)) {
+                    // Change the cursor to visually indicate the link is disabled
+                    link.style.cursor = 'not-allowed';
+                    
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        alert("sorry, this link isn't working :(");
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>

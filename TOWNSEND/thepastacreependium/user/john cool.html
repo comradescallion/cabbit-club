@@ -270,7 +270,7 @@
     <script src="../../src/util.js"></script>
     <script>
         markPageVisited();
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             const links = document.querySelectorAll('a');
             // Allow specific links to function normally
@@ -283,7 +283,10 @@
 
             links.forEach(link => {
                 const href = link.getAttribute('href');
-                if (href && !allowedHrefs.includes(href) && !href.includes('discussion/townsend.html')) {
+                if (href && !allowedHrefs.includes(href)) {
+                    // Change the cursor to visually indicate the link is disabled
+                    link.style.cursor = 'not-allowed';
+                    
                     link.addEventListener('click', (e) => {
                         e.preventDefault();
                         alert("sorry, this link isn't working :(");
