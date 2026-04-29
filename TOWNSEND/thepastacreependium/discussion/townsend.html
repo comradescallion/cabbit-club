@@ -228,7 +228,10 @@
     <!-- Backdrop for mobile -->
     <div id="backdrop" onclick="closeSidebar()" class="fixed inset-0 bg-black/50 z-[90] hidden backdrop-blur-sm"></div>
 
+    <script src="../../src/util.js"></script>
     <script>
+        markPageVisited();
+
         const commentsData = {
             'fiction': {
                 title: 'Subject: Authenticity Dispute',

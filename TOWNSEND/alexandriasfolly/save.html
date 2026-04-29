@@ -201,7 +201,10 @@
     </footer>
 
 
+    <script src="../src/util.js"></script>
     <script>
+        markPageVisited();
+
         // read urlparams
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);

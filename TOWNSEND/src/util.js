@@ -202,3 +202,14 @@ const interactablePastas = [
 ]
 
 // TODO: add localstorage functionality to this
+
+
+
+function markPageVisited() {
+    const page = window.location.pathname.substring("/townsend/".length).split('#')[0].split('?')[0].replace(".html", '').replace('index', '');
+    const visitedPages = JSON.parse(localStorage.getItem('townsend-visited-pages') || '[]');
+    if (!visitedPages.includes(page)) {
+        visitedPages.push(page);
+        localStorage.setItem('townsend-visited-pages', JSON.stringify(visitedPages));
+    }
+}
