@@ -46,69 +46,70 @@
 
     <div class="wrapper">
 
-        <div style="display: flex; flex-direction: row; flex-wrap: wrap; max-width: 840px;">
-
-            <!-- top area-->
-            <div class="vinebox" style="margin-right: 32px;">
+        <div class="row-top">
+            
+            <div class="vinebox main-vinebox">
                 <div class="vineborder horizontal"></div>
                 <div class="middle-row">
                     <div class="vineborder vertical"></div>
-
                     <div class="contents">
-                        <div style="display: flex; flex: 1; flex-direction:row; justify-content:space-around;">
-                            <a href="fourthofjuly.3gp" style="display: flex;  max-height: 140px; min-width: 140px;"><img src="/assets/gifs/cabbit.gif" alt="cabbit"></a>
-                            <img id="heart" src="/assets/gifs/heart.gif" alt="love" style="max-width: 50%; min-width: 0; max-height: 140px;" onclick="heartSound()">
+                        <div class="heart-gif-container">
+                            <a href="fourthofjuly.3gp" class="cabbit-gif-link">
+                                <img src="/assets/gifs/cabbit.gif" alt="cabbit">
+                            </a>
+                            <img id="heart" src="/assets/gifs/heart.gif" alt="love" onclick="heartSound()">
                         </div>
-                        <p style="font-family: Gista Danes; font-size: 50px; margin: 0px;">welcome to cabbit club</p>
+                        <p class="welcome-text">welcome to cabbit club</p>
                     </div>
-
                     <div class="vineborder vertical"></div>
                 </div>
                 <div class="vineborder horizontal"></div>
             </div>
-            <!-- greeting cards-->
-            <div class="contents" style="box-shadow: none; margin: 16px; margin-right: 0; margin-left: 0; min-width: 168px; min-height: 200px;">
-                <a href="/greeting/"><img src="/assets/gifs/fancycabbit.gif" alt="cabbit" style="max-width: 100%;"></a>
-                <a href="/greeting/"><img src="/assets/gifs/greeting.gif" alt="greeting cards" style="max-width: 100%;"></a>
-            </div>
 
-        </div>
-
-
-        <!-- Cabbit search-->
-        <div class="contents" style="margin-top: 32px; box-shadow: none; max-width: 600px; min-width: 196px;">
-            <div style="display: flex; flex-direction:row; flex-wrap: wrap; justify-content: space-around;">
-                <a href="search/" style="max-width: 264px;"><img src="/assets/gifs/search.gif"></a>
-                <div style="display: flex; flex-direction: column; max-width:264px; margin-left: 15px;">
-                    <a href="search/"><img src="/assets/gifs/cabbit-search.gif" style="min-width: 0px; max-width: 200px; max-height:28px;"></a>
-                    <p>there r many many mini many mysteriouses in th world..<br>
-                        cabbit will tell you what you need. to KNOW!!<br>
-                        numver one best source on information e<i>special</i>y about CABBIT!!!!!<br>
-                        cabbit loves you and want s whats best 4 u and that is cabbit so go to cabbit search ^^</p>
+            <div class="motd-column">
+                <p class="motd-header">cabbit facts!</p>
+                <div class="neon-board-container">
+                    <ul class="neon-fact-list">
+                        <li class="neon-fact-item">☆ cabbits can vibrate at a beautiful harmony when they are thinking about carrots!!!</li>
+                        <li class="neon-fact-item">☆ you cannot catch cabbit. cabbit find you</li>
+                        <li class="neon-fact-item">☆ cabbit is NOT edible!!! do NOT EAT!!!</li>
+                    </ul>
                 </div>
             </div>
+
         </div>
 
-        <!-- Rocktobot site link -->
-        <!--
-        <div class="contents" style="margin-top: 32px; box-shadow: none; max-width: 600px; min-width: 196px;">
-            <div style="display: flex; flex-direction:row; flex-wrap: wrap; justify-content: space-between; align-items: center;">
-                <div style="display:flex; flex-direction:column;">
-                    <p style="margin:0; font-weight:bold;">meanwhile, at the ROCKTOBLOG...</p>
+        <div class="row-middle">
+            
+            <div class="contents clean-box search-box">
+                <div class="search-inner">
+                    <a href="search/" class="search-link"><img src="/assets/gifs/search.gif"></a>
+                    <div class="search-text-col">
+                        <a href="search/"><img src="/assets/gifs/cabbit-search.gif" class="search-title-img"></a>
+                        <p>
+                            there r many many mini many mysteriouses in th world..<br>
+                            cabbit will tell you what you need. to KNOW!!<br>
+                            numver one best source on information e<i>special</i>y about CABBIT!!!!!<br>
+                            cabbit loves you and want s whats best 4 u and that is cabbit so go to cabbit search ^^
+                        </p>
+                    </div>
                 </div>
-                <a href="/rocktobot/" style="margin-left: 16px;">visit →</a>
             </div>
+
+            <div class="contents clean-box greeting-cards-box">
+                <a href="/greeting/"><img src="/assets/gifs/fancycabbit.gif" alt="cabbit" class="greeting-img"></a>
+                <a href="/greeting/"><img src="/assets/gifs/greeting.gif" alt="greeting cards" class="greeting-img"></a>
+            </div>
+
         </div>
-        -->
 
-        <!-- credits-->
-        <div class="contents" style="margin-top: 64px; box-shadow: none; max-width: 380px; min-width: 196px;">
-            <p>
-                Credits: <br>
-                Strawberry cursors by <a href="https://toumeya.itch.io/" target="_blank">toumeya</a>
-            </p>
-
-
+        <div class="row-bottom">
+            <div class="contents clean-box credits-box">
+                <p>
+                    Credits: <br>
+                    Strawberry cursors by <a href="https://toumeya.itch.io/" target="_blank">toumeya</a>
+                </p>
+            </div>
         </div>
 
     </div>
@@ -145,7 +146,7 @@
     splat.volume = 0.5
 
     const shine = new Audio('/assets/audio/shine.mp3');
-    splat.volume = 0.5
+    shine.volume = 0.8
 
     function heartSound() {
         if (splote) {
